@@ -9,6 +9,7 @@ describe("Given a PlaceCard component", () => {
       const store = configureStore();
 
       const place = {
+        id: "61a29a80a8700455c9903d38",
         title: "Blue Eye Theth",
         images: [
           "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6b/80/0d.jpg",
@@ -16,7 +17,7 @@ describe("Given a PlaceCard component", () => {
         author: {
           username: "Mario",
         },
-        date: 28 - 11 - 2021,
+        date: "28 - 11 - 2021",
       };
 
       render(
