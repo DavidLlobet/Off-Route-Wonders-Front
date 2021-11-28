@@ -9,7 +9,11 @@ const HomePage = () => {
     loadPlaces();
   }, [loadPlaces]);
 
-  return <PlacesList places={places} />;
+  return (
+    <div>
+      <PlacesList places={places} />
+    </div>
+  );
 };
 
 export default HomePage;
