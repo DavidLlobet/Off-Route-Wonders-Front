@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { getRandomPlaces } from "../../factories/placesFactory";
 import configureStore from "../../redux/store/index";
 import PlacesList from "./PlacesList";
 
@@ -8,7 +7,29 @@ describe("Given a PlacesList component", () => {
   describe("When it receives an array of two places", () => {
     test("Then it should return two places", () => {
       const store = configureStore();
-      const places = getRandomPlaces(2);
+
+      const places = [
+        {
+          title: "Blue Eye Theth",
+          images: [
+            "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6b/80/0d.jpg",
+          ],
+          author: {
+            username: "Mario",
+          },
+          date: 28 - 11 - 2021,
+        },
+        {
+          title: "Red Eye Theth",
+          images: [
+            "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6b/80/0d.jpg",
+          ],
+          author: {
+            username: "David",
+          },
+          date: 28 - 11 - 2021,
+        },
+      ];
 
       render(
         <Provider store={store}>

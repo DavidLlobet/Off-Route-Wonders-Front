@@ -17,5 +17,12 @@ const PlacesList = ({ places }) => {
 export default PlacesList;
 
 PlacesList.propTypes = {
-  places: PropTypes.arrayOf(PropTypes.object).isRequired,
+  places: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      images: PropTypes.arrayOf(PropTypes.string.isRequired),
+      author: PropTypes.object.isRequired,
+      date: PropTypes.string,
+    })
+  ).isRequired,
 };

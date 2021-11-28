@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const PlaceCard = ({ place }) => {
   return (
     <li title="place-item" className="card">
@@ -18,3 +20,12 @@ const PlaceCard = ({ place }) => {
 };
 
 export default PlaceCard;
+
+PlaceCard.propTypes = {
+  place: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    images: PropTypes.arrayOf(PropTypes.string.isRequired),
+    author: PropTypes.object.isRequired,
+    date: PropTypes.string,
+  }),
+};
