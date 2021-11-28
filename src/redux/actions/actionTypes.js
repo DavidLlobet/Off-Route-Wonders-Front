@@ -1,5 +1,5 @@
 const actionTypes = {
-  loadPlaces: "PLACES",
+  loadPlaces: "LOAD_PLACES",
 };
 
 export default actionTypes;
