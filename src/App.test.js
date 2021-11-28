@@ -1,6 +1,9 @@
-import { render } from "@testing-library/react";
+import { Router } from "react-router";
 import App from "./App";
 
 test("renders with no information", () => {
-  render(<App />);
+  <Router>
+    render(
+    <App />)
+  </Router>;
 });

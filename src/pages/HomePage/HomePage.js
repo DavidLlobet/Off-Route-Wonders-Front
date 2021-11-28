@@ -1,5 +1,19 @@
+import { useEffect } from "react";
+import PlacesList from "../../components/PlacesList/PlacesList";
+import usePlaces from "../../hooks/usePlaces";
+
 const HomePage = () => {
-  return <h1>HomePage</h1>;
+  const { places, loadPlaces } = usePlaces();
+
+  useEffect(() => {
+    loadPlaces();
+  }, [loadPlaces]);
+
+  return (
+    <div>
+      <PlacesList places={places} />
+    </div>
+  );
 };
 
 export default HomePage;
