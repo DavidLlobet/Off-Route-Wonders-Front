@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadPlacesThunk } from "../redux/thunks/placesThunks";
 
 const usePlaces = () => {
-  const places = useSelector((store) => store.place);
+  const places = useSelector((store) => store.places);
   const dispatch = useDispatch();
 
   const loadPlaces = useCallback(() => {
-    dispatch(loadPlacesThunk);
+    dispatch(loadPlacesThunk());
   }, [dispatch]);
 
   return { places, loadPlaces };
