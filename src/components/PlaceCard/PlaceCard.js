@@ -1,11 +1,17 @@
-const PlaceCard = ({ title, images, author, date }) => {
+const PlaceCard = ({ place }) => {
   return (
-    <li className="card">
-      <p className="card__title">{title}</p>
-      <img src={images[0]} alt={title} className="card__photo" />
+    <li title="place-item" className="card">
+      <p className="card__title">{place.title}</p>
+      <img
+        src={place.images[0]}
+        alt={place.title}
+        className="card__photo"
+        width="100"
+        height="100"
+      />
       <p className="card__info">
         Autor:
-        {author.username}-{date}
+        {place.author.username}-{place.date}
       </p>
     </li>
   );
