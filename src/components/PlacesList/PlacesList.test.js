@@ -19,6 +19,9 @@ describe("Given a PlacesList component", () => {
             username: "Mario",
           },
           date: "28 - 11 - 2021",
+          country: {
+            name: "Filipinas",
+          },
         },
         {
           id: "61a29a80a8700455c9903d56",
@@ -30,6 +33,9 @@ describe("Given a PlacesList component", () => {
             username: "David",
           },
           date: "28 - 11 - 2021",
+          country: {
+            name: "Filipinas",
+          },
         },
       ];
 
@@ -39,8 +45,8 @@ describe("Given a PlacesList component", () => {
         </Provider>
       );
 
-      const result = screen.getAllByRole("listitem", {
-        name: "place-item",
+      const result = screen.getAllByRole("img", {
+        clas: "card__photo",
       });
 
       expect(result).toHaveLength(places.length);

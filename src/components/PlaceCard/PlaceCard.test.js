@@ -18,6 +18,9 @@ describe("Given a PlaceCard component", () => {
           username: "Mario",
         },
         date: "28 - 11 - 2021",
+        country: {
+          name: "Filipinas",
+        },
       };
 
       render(
@@ -26,7 +29,7 @@ describe("Given a PlaceCard component", () => {
         </Provider>
       );
 
-      const title = screen.getByRole("listitem", { title: place.title });
+      const title = screen.getByRole("img", { class: "card__photo" });
 
       expect(title).toBeInTheDocument();
     });

@@ -1,15 +1,16 @@
 import PlaceCard from "../PlaceCard/PlaceCard";
 import PropTypes from "prop-types";
+import "./PlaceList.scss";
 
 const PlacesList = ({ places }) => {
   return (
     <>
       <h1>Entradas recientes</h1>
-      <ul title="places-list" className="list">
+      <div title="places-list" className="list">
         {places.map((place) => (
           <PlaceCard key={place.id} place={place} />
         ))}
-      </ul>
+      </div>
     </>
   );
 };
