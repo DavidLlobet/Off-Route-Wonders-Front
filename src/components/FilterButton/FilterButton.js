@@ -53,22 +53,3 @@ const FilterButton = () => {
 };
 
 export default FilterButton;
-
-{
-  /* <DropdownButton */
-}
-//   bsStyle="default"
-//   bsSize="small"
-//   style={{ maxHeight: "28px" }}
-//   title={"Qty"}
-//   key={1}
-//   id="dropdown-size-small"
-// >
-//   <MenuItem eventKey="1">Albania</MenuItem>
-//   <MenuItem eventKey="2">Alemania</MenuItem>
-//   <MenuItem eventKey="3" active>
-//     Austria
-//   </MenuItem>
-//   <MenuItem divider />
-//   <MenuItem eventKey="4">Separated link</MenuItem>
-// </DropdownButton>
