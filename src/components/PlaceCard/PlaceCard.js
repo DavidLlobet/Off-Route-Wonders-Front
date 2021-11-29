@@ -1,19 +1,21 @@
 import PropTypes from "prop-types";
+import "./PlaceCard.scss";
 
 const PlaceCard = ({ place }) => {
   return (
     <div title="place-item" className="card">
-      <p className="card__title">{place.title}</p>
+      <p className="card__title">
+        {place.title} ({place.country.name})
+      </p>
       <img
         src={place.images[0]}
         alt={place.title}
         className="card__photo"
-        width="100"
-        height="100"
+        width="272"
+        height="178"
       />
       <p className="card__info">
-        Autor:
-        {place.author.username}-{place.date}
+        Autor: {place.author.username} - {place.date}
       </p>
     </div>
   );

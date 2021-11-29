@@ -1,5 +1,6 @@
 import PlaceCard from "../PlaceCard/PlaceCard";
 import PropTypes from "prop-types";
+import "./PlaceList.scss";
 
 const PlacesList = ({ places }) => {
   return (
