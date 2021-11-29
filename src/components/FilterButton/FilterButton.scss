@@ -1,0 +1,16 @@
+.dropdown {
+  display: flex;
+  justify-content: left;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.dropdown-menu {
+  height: 150px;
+  overflow-y: scroll;
+}
+
+.dropdown-item {
+  font-size: 20px;
+}
