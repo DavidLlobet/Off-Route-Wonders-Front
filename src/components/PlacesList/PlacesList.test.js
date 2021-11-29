@@ -39,8 +39,8 @@ describe("Given a PlacesList component", () => {
         </Provider>
       );
 
-      const result = screen.getAllByRole("listitem", {
-        name: "place-item",
+      const result = screen.getAllByRole("img", {
+        clas: "card__photo",
       });
 
       expect(result).toHaveLength(places.length);

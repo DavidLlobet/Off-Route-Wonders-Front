@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const PlaceCard = ({ place }) => {
   return (
-    <li title="place-item" className="card">
+    <div title="place-item" className="card">
       <p className="card__title">{place.title}</p>
       <img
         src={place.images[0]}
@@ -15,7 +15,7 @@ const PlaceCard = ({ place }) => {
         Autor:
         {place.author.username}-{place.date}
       </p>
-    </li>
+    </div>
   );
 };
 
