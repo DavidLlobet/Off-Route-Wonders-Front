@@ -1,51 +1,50 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
-import { DropdownButton, MenuItem } from "react-bootstrap";
 import "./FilterButton.scss";
 
 const FilterButton = () => {
   return (
-    <div class="dropdown">
+    <div className="dropdown">
       <button
-        class="btn btn-info dropdown-toggle"
+        className="btn btn-info dropdown-toggle"
         type="button"
         id="dropdownMenu2"
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
       ></button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <button class="dropdown-item" type="button">
+      <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button className="dropdown-item" type="button">
           Albania
         </button>
-        <button class="dropdown-item" type="button">
+        <button className="dropdown-item" type="button">
           Alemania
         </button>
-        <button class="dropdown-item" type="button">
+        <button className="dropdown-item" type="button">
           Austria
         </button>
-        <button class="dropdown-item" type="button">
+        <button className="dropdown-item" type="button">
           Bélgica
         </button>
-        <button class="dropdown-item" type="button">
+        <button className="dropdown-item" type="button">
           Bielorrusia
         </button>
-        <button class="dropdown-item" type="button">
+        <button className="dropdown-item" type="button">
           Bielorrusia
         </button>
-        <button class="dropdown-item" type="button">
+        <button className="dropdown-item" type="button">
           Bielorrusia
         </button>
-        <button class="dropdown-item" type="button">
+        <button className="dropdown-item" type="button">
           Bielorrusia
         </button>
-        <button class="dropdown-item" type="button">
+        <button className="dropdown-item" type="button">
           Bielorrusia
         </button>
-        <button class="dropdown-item" type="button">
+        <button className="dropdown-item" type="button">
           Bielorrusia
         </button>
-        <button class="dropdown-item" type="button">
+        <button className="dropdown-item" type="button">
           Bielorrusia
         </button>
       </div>
