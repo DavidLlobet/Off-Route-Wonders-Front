@@ -1,12 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap");
+
 .header {
   display: flex;
   height: 100px;
   background-color: #538393;
-  font-size: 16px;
+  font-size: 24px;
   justify-content: space-around;
   align-items: center;
+  line-height: 26px;
+  font-family: "Quattrocento Sans", sans-serif;
   &__logo {
     width: 130px;
     color: #fff;
+    margin: 0;
   }
 }
