@@ -3,18 +3,18 @@ import "./PlaceCard.scss";
 
 const PlaceCard = ({ place }) => {
   return (
-    <div title="place-item" className="card">
-      <p className="card__title">
+    <div title="place-item" className="place">
+      <p className="place">
         {place.title} ({place.country.name})
       </p>
       <img
         src={place.images[0]}
         alt={place.title}
-        className="card__photo"
+        className="place"
         width="272"
         height="178"
       />
-      <p className="card__info">
+      <p className="place__info">
         Autor: {place.author.username} - {place.date}
       </p>
     </div>
