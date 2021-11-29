@@ -18,6 +18,9 @@ describe("Given a PlaceCard component", () => {
           username: "Mario",
         },
         date: "28 - 11 - 2021",
+        country: {
+          name: "Filipinas",
+        },
       };
 
       render(
