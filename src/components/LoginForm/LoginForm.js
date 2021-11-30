@@ -11,7 +11,7 @@ const LoginForm = () => {
   const [userData, setUserData] = useState(initialUser);
   const { loginUser } = useUser();
 
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
     loginUser(userData);
   };
