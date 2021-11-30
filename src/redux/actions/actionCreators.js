@@ -9,3 +9,8 @@ export const loadPlacesByCountryAction = (id) => ({
   type: actionTypes.loadPlacesByCountry,
   id,
 });
+
+export const loginUserAction = (user) => ({
+  type: actionTypes.loginUser,
+  user,
+});
