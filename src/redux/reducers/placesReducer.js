@@ -9,7 +9,7 @@ const placesReducer = (places = [], action) => {
       break;
 
     case actionTypes.loadPlacesByCountry:
-      newPlaces = [...places.filter((place) => place.country.id === action.id)];
+      newPlaces = [...action.places];
       break;
     default:
       newPlaces = places;
