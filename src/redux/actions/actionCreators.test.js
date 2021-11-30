@@ -1,4 +1,4 @@
-import { loadPlacesAction } from "./actionCreators";
+import { loadPlacesAction, loadPlacesByCountryAction } from "./actionCreators";
 import actionTypes from "./actionTypes";
 
 describe("Given an actionCreators", () => {
@@ -77,5 +77,20 @@ describe("Given an actionCreators", () => {
 
       expect(result).toEqual(expected);
     });
+  });
+});
+
+describe("When it calls a loadPlacesByCountryAction", () => {
+  test("Then it should return a list of places", () => {
+    const idCountry = "61a1057eec1d9f99c7672ca6";
+
+    const expected = {
+      type: actionTypes.loadPlacesByCountry,
+      id: idCountry,
+    };
+
+    const result = loadPlacesByCountryAction(idCountry);
+
+    expect(result).toEqual(expected);
   });
 });

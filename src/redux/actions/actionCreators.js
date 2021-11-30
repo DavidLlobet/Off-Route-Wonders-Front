@@ -4,3 +4,8 @@ export const loadPlacesAction = (places) => ({
   type: actionTypes.loadPlaces,
   places,
 });
+
+export const loadPlacesByCountryAction = (id) => ({
+  type: actionTypes.loadPlacesByCountry,
+  id,
+});
