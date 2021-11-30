@@ -79,7 +79,6 @@ describe("Given a placesReducer reducer", () => {
   });
   describe("When it receives a list of places and a loadPlacesByCountryAction", () => {
     test("Then it should return a new list of places", () => {
-      const id = "61a1057eec1d9f99c7672ca6";
       const places = [
         {
           coordinates: {
@@ -147,9 +146,9 @@ describe("Given a placesReducer reducer", () => {
           id: "61a26e7d1c9f711f24d1a8fc",
         },
       ];
-      const newPlaces = placesReducer(places, loadPlacesByCountryAction(id));
+      const newPlaces = placesReducer([], loadPlacesByCountryAction(places));
 
-      expect(newPlaces[0].country.id).toBe(id);
+      expect(newPlaces).toEqual(places);
     });
   });
 });

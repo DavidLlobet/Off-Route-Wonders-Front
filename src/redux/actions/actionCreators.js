@@ -5,9 +5,9 @@ export const loadPlacesAction = (places) => ({
   places,
 });
 
-export const loadPlacesByCountryAction = (id) => ({
+export const loadPlacesByCountryAction = (places) => ({
   type: actionTypes.loadPlacesByCountry,
-  id,
+  places,
 });
 
 export const loginUserAction = (user) => ({

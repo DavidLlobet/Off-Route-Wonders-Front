@@ -10,8 +10,8 @@ export const loadPlacesThunk = () => async (dispatch) => {
 };
 
 export const loadPlacesByCountryThunk = (idCountry) => async (dispatch) => {
-  const { data: id } = await axios.get(
+  const response = await axios.get(
     `${process.env.REACT_APP_URL_API}/country/${idCountry}`
   );
-  dispatch(loadPlacesByCountryAction(id));
+  dispatch(loadPlacesByCountryAction(response.data));
 };
