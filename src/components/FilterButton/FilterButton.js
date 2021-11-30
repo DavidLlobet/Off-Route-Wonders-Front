@@ -14,6 +14,9 @@ const FilterButton = () => {
         aria-expanded="false"
       ></button>
       <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button className="dropdown-item disabled" type="button">
+          Europa
+        </button>
         <button className="dropdown-item" type="button">
           Albania
         </button>
@@ -29,23 +32,23 @@ const FilterButton = () => {
         <button className="dropdown-item" type="button">
           Bielorrusia
         </button>
-        <button className="dropdown-item" type="button">
-          Bielorrusia
+        <button className="dropdown-item disabled" type="button">
+          África
         </button>
         <button className="dropdown-item" type="button">
-          Bielorrusia
+          Angola
         </button>
         <button className="dropdown-item" type="button">
-          Bielorrusia
+          Argelia
         </button>
         <button className="dropdown-item" type="button">
-          Bielorrusia
+          Benín
         </button>
         <button className="dropdown-item" type="button">
-          Bielorrusia
+          Botsuana
         </button>
         <button className="dropdown-item" type="button">
-          Bielorrusia
+          Burkina Faso
         </button>
       </div>
     </div>
