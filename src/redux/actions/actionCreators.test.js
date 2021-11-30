@@ -1,4 +1,8 @@
-import { loadPlacesAction, loadPlacesByCountryAction } from "./actionCreators";
+import {
+  loadPlacesAction,
+  loadPlacesByCountryAction,
+  loginUserAction,
+} from "./actionCreators";
 import actionTypes from "./actionTypes";
 
 describe("Given an actionCreators", () => {
@@ -90,6 +94,23 @@ describe("When it calls a loadPlacesByCountryAction", () => {
     };
 
     const result = loadPlacesByCountryAction(idCountry);
+
+    expect(result).toEqual(expected);
+  });
+});
+
+describe("When it calls a loginUserAction", () => {
+  test("Then it should return a logged user", () => {
+    const user = {
+      username: "Mario",
+      password: "Mario",
+    };
+    const expected = {
+      type: actionTypes.loginUser,
+      user: user,
+    };
+
+    const result = loginUserAction(user);
 
     expect(result).toEqual(expected);
   });
