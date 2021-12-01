@@ -1,19 +1,16 @@
-import "./LoginForm.scss";
 import { useState } from "react";
-import useUser from "../../hooks/useUser";
 
-const LoginForm = () => {
+const RegisterForm = () => {
   const initialUser = {
     username: "",
     password: "",
   };
 
   const [userData, setUserData] = useState(initialUser);
-  const { loginUser } = useUser();
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    loginUser(userData);
+    registerUser(userData);
   };
 
   const changeUserData = (event) => {
@@ -25,9 +22,7 @@ const LoginForm = () => {
 
   return (
     <>
-      <p className="title">
-        Logéate para compartir tus experiencias por el mundo
-      </p>
+      <p className="title">¿Todavía no estás registrado? ¿A qué esperas? </p>
       <form
         className="login-form"
         noValidate
@@ -38,10 +33,9 @@ const LoginForm = () => {
         <input
           type="text"
           id="username"
-          placeholder="Introduce tu nombre de usuario"
+          placeholder="Introduce un nombre de usuario"
           name="username"
           className="login-form__input"
-          value={userData.username}
           required
           onChange={changeUserData}
         ></input>
@@ -49,10 +43,19 @@ const LoginForm = () => {
         <input
           type="password"
           id="password"
-          placeholder="Introduce tu contraseña"
+          placeholder="Introduce una contraseña"
           name="password"
           className="login-form__input"
-          value={userData.password}
+          required
+          onChange={changeUserData}
+        ></input>
+        <label htmlFor="email"></label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Introduce un correo electrónico"
+          name="password"
+          className="login-form__input"
           required
           onChange={changeUserData}
         ></input>
@@ -60,9 +63,8 @@ const LoginForm = () => {
           Validar
         </button>
       </form>
-      <div className="line"></div>
     </>
   );
 };
 
-export default LoginForm;
+export default RegisterForm;
