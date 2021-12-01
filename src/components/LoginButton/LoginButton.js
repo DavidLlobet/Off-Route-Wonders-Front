@@ -10,7 +10,7 @@ const LoginButton = () => {
     </Link>
   ) : (
     <Link className="login" to="my-profile">
-      My perfil
+      Mi perfil
     </Link>
   );
 };
