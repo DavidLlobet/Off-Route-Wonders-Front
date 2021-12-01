@@ -5,7 +5,7 @@ import { loginUserAction } from "../actions/actionCreators";
 export const loginUserThunk = (user) => async (dispatch) => {
   try {
     const response = await axios.post(
-      process.env.REACT_APP_URL_API_USER + "/login",
+      process.env.REACT_APP_URL_API_USER + "/user/login",
       user
     );
 
@@ -18,7 +18,5 @@ export const loginUserThunk = (user) => async (dispatch) => {
         JSON.stringify({ token: token })
       );
     }
-  } catch {
-    new Error("You are not a registered user");
-  }
+  } catch {}
 };
