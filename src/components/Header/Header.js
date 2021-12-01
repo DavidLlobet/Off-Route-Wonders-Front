@@ -1,4 +1,5 @@
 import LoginButton from "../LoginButton/LoginButton";
+import LogoutButton from "../LogoutButton/LogoutButton";
 import "./Header.scss";
 
 const Header = () => {
@@ -6,6 +7,7 @@ const Header = () => {
     <header title="header" className="header">
       <p className="header__logo">Off Route Wonders</p>
       <LoginButton />
+      <LogoutButton />
     </header>
   );
 };
