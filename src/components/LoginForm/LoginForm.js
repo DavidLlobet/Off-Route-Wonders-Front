@@ -1,6 +1,7 @@
 import "./LoginForm.scss";
 import { useState } from "react";
 import useUser from "../../hooks/useUser";
+import { useNavigate } from "react-router";
 
 const LoginForm = () => {
   const initialUser = {
@@ -10,10 +11,14 @@ const LoginForm = () => {
 
   const [userData, setUserData] = useState(initialUser);
   const { loginUser } = useUser();
+  let navigate = useNavigate();
 
   const onSubmit = async (event) => {
     event.preventDefault();
     loginUser(userData);
+    setTimeout(() => {
+      navigate("/home");
+    }, 1000);
   };
 
   const changeUserData = (event) => {
@@ -61,47 +66,6 @@ const LoginForm = () => {
         </button>
       </form>
       <div className="line"></div>
-      <p className="title">¿Todavía no estás registrado? ¿A qué esperas? </p>
-      <form
-        className="login-form"
-        noValidate
-        autoComplete="off"
-        onSubmit={onSubmit}
-      >
-        <label htmlFor="username"></label>
-        <input
-          type="text"
-          id="username"
-          placeholder="Introduce un nombre de usuario"
-          name="username"
-          className="login-form__input"
-          required
-          onChange={changeUserData}
-        ></input>
-        <label htmlFor="password"></label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Introduce una contraseña"
-          name="password"
-          className="login-form__input"
-          required
-          onChange={changeUserData}
-        ></input>
-        <label htmlFor="email"></label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Introduce un correo electrónico"
-          name="password"
-          className="login-form__input"
-          required
-          onChange={changeUserData}
-        ></input>
-        <button type="submit" className="login-form__button">
-          Validar
-        </button>
-      </form>
     </>
   );
 };

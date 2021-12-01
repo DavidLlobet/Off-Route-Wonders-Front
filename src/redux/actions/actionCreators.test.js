@@ -2,6 +2,7 @@ import {
   loadPlacesAction,
   loadPlacesByCountryAction,
   loginUserAction,
+  registerUserAction,
 } from "./actionCreators";
 import actionTypes from "./actionTypes";
 
@@ -177,6 +178,23 @@ describe("When it calls a loginUserAction", () => {
     };
 
     const result = loginUserAction(user);
+
+    expect(result).toEqual(expected);
+  });
+});
+
+describe("When it calls a registerUserAction", () => {
+  test("Then it should return a new user", () => {
+    const newUser = {
+      username: "Luigi",
+      password: "Luigi",
+    };
+    const expected = {
+      type: actionTypes.registerUser,
+      user: newUser,
+    };
+
+    const result = registerUserAction(newUser);
 
     expect(result).toEqual(expected);
   });
