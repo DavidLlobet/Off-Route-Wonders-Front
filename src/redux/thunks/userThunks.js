@@ -1,6 +1,6 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
-import { loginUserAction } from "../actions/actionCreators";
+import { loginUserAction, registerUserAction } from "../actions/actionCreators";
 
 export const loginUserThunk = (user) => async (dispatch) => {
   try {
@@ -19,4 +19,14 @@ export const loginUserThunk = (user) => async (dispatch) => {
       );
     }
   } catch {}
+};
+
+export const registerUserThunk = (user) => async (dispatch) => {
+  const response = await axios.post(
+    process.env.REACT_APP_URL_API_USER + "/register",
+    user
+  );
+  if (response.status === 200) {
+    dispatch(registerUserAction(response.data));
+  }
 };

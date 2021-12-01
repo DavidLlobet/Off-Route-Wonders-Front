@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useUser from "../../hooks/useUser";
 
 const RegisterForm = () => {
   const initialUser = {
@@ -7,6 +8,7 @@ const RegisterForm = () => {
   };
 
   const [userData, setUserData] = useState(initialUser);
+  const { registerUser } = useUser();
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -56,7 +58,6 @@ const RegisterForm = () => {
           placeholder="Introduce un correo electrónico"
           name="password"
           className="login-form__input"
-          required
           onChange={changeUserData}
         ></input>
         <button type="submit" className="login-form__button">
