@@ -1,6 +1,10 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
-import { loginUserAction, registerUserAction } from "../actions/actionCreators";
+import {
+  loginUserAction,
+  logoutUserAction,
+  registerUserAction,
+} from "../actions/actionCreators";
 
 export const loginUserThunk = (user) => async (dispatch) => {
   try {
@@ -29,4 +33,9 @@ export const registerUserThunk = (user) => async (dispatch) => {
   if (response.status === 200) {
     dispatch(registerUserAction(response.data));
   }
+};
+
+export const logoutUserThunk = () => (dispatch) => {
+  localStorage.removeItem("user");
+  dispatch(logoutUserAction());
 };
