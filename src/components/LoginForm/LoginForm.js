@@ -1,6 +1,7 @@
 import "./LoginForm.scss";
 import { useState } from "react";
 import useUser from "../../hooks/useUser";
+import { useNavigate } from "react-router";
 
 const LoginForm = () => {
   const initialUser = {
@@ -10,10 +11,12 @@ const LoginForm = () => {
 
   const [userData, setUserData] = useState(initialUser);
   const { loginUser } = useUser();
+  let navigate = useNavigate();
 
   const onSubmit = async (event) => {
     event.preventDefault();
     loginUser(userData);
+    navigate("/home");
   };
 
   const changeUserData = (event) => {
