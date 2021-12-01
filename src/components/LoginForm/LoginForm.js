@@ -18,7 +18,7 @@ const LoginForm = () => {
     loginUser(userData);
     setTimeout(() => {
       navigate("/home");
-    }, 1000);
+    }, 200);
   };
 
   const changeUserData = (event) => {
