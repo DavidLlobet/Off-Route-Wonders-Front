@@ -1,3 +1,4 @@
+import "./RegisterForm.scss";
 import { useState } from "react";
 import useUser from "../../hooks/useUser";
 
@@ -9,10 +10,12 @@ const RegisterForm = () => {
 
   const [userData, setUserData] = useState(initialUser);
   const { registerUser } = useUser();
+  const [message, setMessage] = useState(false);
 
   const onSubmit = async (event) => {
     event.preventDefault();
     registerUser(userData);
+    setMessage(true);
   };
 
   const changeUserData = (event) => {
@@ -26,7 +29,7 @@ const RegisterForm = () => {
     <>
       <p className="title">¿Todavía no estás registrado? ¿A qué esperas? </p>
       <form
-        className="login-form"
+        className="register-form"
         noValidate
         autoComplete="off"
         onSubmit={onSubmit}
@@ -37,7 +40,7 @@ const RegisterForm = () => {
           id="username"
           placeholder="Introduce un nombre de usuario"
           name="username"
-          className="login-form__input"
+          className="register-form__input"
           required
           onChange={changeUserData}
         ></input>
@@ -47,7 +50,7 @@ const RegisterForm = () => {
           id="password"
           placeholder="Introduce una contraseña"
           name="password"
-          className="login-form__input"
+          className="register-form__input"
           required
           onChange={changeUserData}
         ></input>
@@ -57,13 +60,16 @@ const RegisterForm = () => {
           id="email"
           placeholder="Introduce un correo electrónico"
           name="password"
-          className="login-form__input"
+          className="register-form__input"
           onChange={changeUserData}
         ></input>
-        <button type="submit" className="login-form__button">
+        <button type="submit" className="register-form__button">
           Validar
         </button>
       </form>
+      <p className="register-message">
+        {message === true ? "¡Te has registrado en Off Route Wonders!" : ""}
+      </p>
     </>
   );
 };
