@@ -16,7 +16,9 @@ const LoginForm = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     loginUser(userData);
-    navigate("/home");
+    setTimeout(() => {
+      navigate("/home");
+    }, 1000);
   };
 
   const changeUserData = (event) => {
