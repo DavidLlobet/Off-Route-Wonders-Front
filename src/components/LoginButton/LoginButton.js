@@ -1,7 +1,12 @@
+import { Link } from "react-router-dom";
 import "./LoginButton.scss";
 
 const LoginButton = () => {
-  return <button className="login">Entra</button>;
+  return (
+    <Link className="login" to="login">
+      Entra
+    </Link>
+  );
 };
 
 export default LoginButton;

@@ -3,6 +3,7 @@
 .login {
   display: flex;
   justify-content: center;
+  color: #000;
   align-items: center;
   height: 33px;
   width: 108px;
@@ -10,6 +11,7 @@
   top: 25px;
   font-size: 22px;
   border-radius: 20px;
+  text-decoration: inherit;
   background-color: #e5e5e5;
   font-family: "Port Lligat Sans", sans-serif;
 }

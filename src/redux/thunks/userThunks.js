@@ -18,7 +18,5 @@ export const loginUserThunk = (user) => async (dispatch) => {
         JSON.stringify({ token: token })
       );
     }
-  } catch {
-    new Error("You are not a registered user");
-  }
+  } catch {}
 };

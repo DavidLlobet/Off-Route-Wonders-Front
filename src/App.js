@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import CountryPage from "./pages/CountryPage/CountryPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/home" element={<HomePage />} />
         <Route exact path="/country" element={<CountryPage />} />
+        <Route exact path="/login" element={<LoginPage />} />
       </Routes>
       <Footer />
     </Router>
