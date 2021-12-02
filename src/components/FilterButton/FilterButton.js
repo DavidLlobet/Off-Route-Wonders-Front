@@ -4,7 +4,7 @@ import "./FilterButton.scss";
 
 const FilterButton = () => {
   return (
-    <div className="dropdown">
+    <div className="dropdown d-block d-sm-none">
       <button
         className="btn btn-info dropdown-toggle"
         type="button"
