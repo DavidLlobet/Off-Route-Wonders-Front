@@ -22,10 +22,18 @@ const LoginForm = () => {
   };
 
   const changeUserData = (event) => {
-    setUserData({
-      ...userData,
-      [event.target.id]: event.target.value,
-    });
+    if (event.target.id === "password-login") {
+      setUserData({
+        ...userData,
+        password: event.target.value,
+      });
+    }
+    if (event.target.id === "username-login") {
+      setUserData({
+        ...userData,
+        username: event.target.value,
+      });
+    }
   };
 
   return (
