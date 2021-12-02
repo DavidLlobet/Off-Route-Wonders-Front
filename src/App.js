@@ -5,6 +5,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import CountryPage from "./pages/CountryPage/CountryPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import MyProfilePage from "./pages/MyProfilePage/MyProfilePage";
+import CreateFormPage from "./pages/CreateFormPage/CreateFormPage";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route exact path="/home" element={<HomePage />} />
         <Route exact path="/country" element={<CountryPage />} />
         <Route exact path="/login" element={<LoginPage />} />
+        <Route exact path="/my-profile" element={<MyProfilePage />} />
+        <Route exact path="/my-profile/create" element={<CreateFormPage />} />
       </Routes>
       <Footer />
     </Router>
