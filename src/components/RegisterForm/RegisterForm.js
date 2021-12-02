@@ -37,7 +37,7 @@ const RegisterForm = () => {
         <label htmlFor="username"></label>
         <input
           type="text"
-          id="username"
+          id="username-register"
           placeholder="Introduce un nombre de usuario"
           name="username"
           className="register-form__input"
@@ -47,7 +47,7 @@ const RegisterForm = () => {
         <label htmlFor="password"></label>
         <input
           type="password"
-          id="password"
+          id="password-register"
           placeholder="Introduce una contraseña"
           name="password"
           className="register-form__input"
