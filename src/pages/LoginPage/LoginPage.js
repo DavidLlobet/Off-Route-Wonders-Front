@@ -6,10 +6,8 @@ const LoginPage = () => {
   return (
     <>
       <div className="header-line"></div>
-      <div className="container">
-        <LoginForm />
-        <RegisterForm />
-      </div>
+      <LoginForm />
+      <RegisterForm />
     </>
   );
 };
