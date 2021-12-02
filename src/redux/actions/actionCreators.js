@@ -10,6 +10,11 @@ export const loadPlacesByCountryAction = (places) => ({
   places,
 });
 
+export const createPlaceAction = (place) => ({
+  type: actionTypes.createPlace,
+  place,
+});
+
 export const loginUserAction = (user) => ({
   type: actionTypes.loginUser,
   user,
