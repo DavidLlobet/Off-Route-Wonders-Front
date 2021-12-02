@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Port+Lligat+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap");
 
 .login {
   display: flex;
@@ -12,4 +13,14 @@
   text-decoration: none;
   background-color: #e5e5e5;
   font-family: "Port Lligat Sans", sans-serif;
+}
+
+@media (min-width: 992px) {
+  .login {
+    display: flex;
+    background-color: #fff;
+    font-size: 27px;
+    font-family: "Quattrocento Sans", sans-serif;
+    text-decoration: none;
+  }
 }
