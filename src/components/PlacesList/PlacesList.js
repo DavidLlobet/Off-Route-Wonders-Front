@@ -6,6 +6,9 @@ const PlacesList = ({ places }) => {
   return (
     <>
       <h1>Entradas recientes</h1>
+      <div className="separation">
+        <div className="separation__line"></div>
+      </div>
       <div title="places-list" className="list">
         {places.map((place) => (
           <PlaceCard key={place.id} place={place} />

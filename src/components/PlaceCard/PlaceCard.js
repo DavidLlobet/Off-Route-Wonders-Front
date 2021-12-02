@@ -2,20 +2,23 @@ import PropTypes from "prop-types";
 import "./PlaceCard.scss";
 
 const PlaceCard = ({ place }) => {
+  let date = new Date(place.date);
+
   return (
     <div title="place-item" className="place">
-      <p className="place">
+      <p className="place__title">
         {place.title} ({place.country.name})
       </p>
       <img
         src={place.images[0]}
         alt={place.title}
-        className="place"
+        className="place__image"
         width="272"
         height="178"
       />
       <p className="place__info">
-        Autor: {place.author.username} - {place.date}
+        Autor: {place.author.username} - {date.getDate()}-{date.getMonth() + 1}-
+        {date.getFullYear()}
       </p>
     </div>
   );
