@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  createPlaceThunk,
   loadPlacesByCountryThunk,
   loadPlacesThunk,
 } from "../redux/thunks/placesThunks";
@@ -17,7 +18,11 @@ const usePlaces = () => {
     dispatch(loadPlacesByCountryThunk());
   }, [dispatch]);
 
-  return { places, loadPlaces, loadPlacesByCountry };
+  const createPlace = (place) => {
+    dispatch(createPlaceThunk(place));
+  };
+
+  return { places, loadPlaces, loadPlacesByCountry, createPlace };
 };
 
 export default usePlaces;

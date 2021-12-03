@@ -11,6 +11,10 @@ const placesReducer = (places = [], action) => {
     case actionTypes.loadPlacesByCountry:
       newPlaces = [...action.places];
       break;
+
+    case actionTypes.createPlace:
+      newPlaces = [...places, action.place];
+      break;
     default:
       newPlaces = places;
   }

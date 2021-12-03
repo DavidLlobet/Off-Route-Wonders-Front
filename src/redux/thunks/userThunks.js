@@ -9,7 +9,7 @@ import {
 export const loginUserThunk = (user) => async (dispatch) => {
   try {
     const response = await axios.post(
-      process.env.REACT_APP_URL_API_USER + "/login",
+      `${process.env.REACT_APP_URL_API_USER}/login`,
       user
     );
 
