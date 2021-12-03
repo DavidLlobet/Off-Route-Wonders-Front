@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  createPlaceAction,
   loadPlacesAction,
   loadPlacesByCountryAction,
 } from "../actions/actionCreators";
@@ -15,3 +16,22 @@ export const loadPlacesByCountryThunk = (idCountry) => async (dispatch) => {
   );
   dispatch(loadPlacesByCountryAction(response.data));
 };
+
+export const createPlaceThunk = (place) => async (dispatch) => {
+  const storageUser = localStorage.getItem("user");
+  const { token } = JSON.parse(storageUser);
+  const createPlace = await axios.post(
+    `${process.env.REACT_APP_URL_API}/create`,
+    place,
+    {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    }
+  );
+  if (createPlace.status === 200) {
+    dispatch(createPlaceAction(createPlace.data));
+  }
+};
+
+// `${process.env.REACT_APP_URL_API}/create`,
