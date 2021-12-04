@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
-import DeleteButton from "../DeleteButton/DeleteButton";
-import ModifyButton from "../ModifyButton/ModifyButton";
 
-const PlaceByAuthorCard = ({ place }) => {
+const PlaceByAuthorCard = ({ place, onClick }) => {
   let date = new Date(place.date);
 
   return (
@@ -20,8 +18,10 @@ const PlaceByAuthorCard = ({ place }) => {
       <p className="place__info">
         {date.getDate()}-{date.getMonth() + 1}-{date.getFullYear()}
       </p>
-      <ModifyButton />
-      <DeleteButton />
+      <button className="place__button">Modificar</button>
+      <button className="place__button" onClick={() => onClick(place.id)}>
+        Eliminar
+      </button>
     </div>
   );
 };
@@ -33,6 +33,7 @@ PlaceByAuthorCard.propTypes = {
     title: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(PropTypes.string.isRequired),
     author: PropTypes.object.isRequired,
-    date: PropTypes.string,
+    // date: PropTypes.string,
   }),
+  // onClick: PropTypes.func.isRequired,
 };
