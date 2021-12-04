@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   createPlaceThunk,
+  deletePlaceThunk,
   loadPlacesByAuthorThunk,
   loadPlacesByCountryThunk,
   loadPlacesThunk,
@@ -27,12 +28,16 @@ const usePlaces = () => {
     dispatch(createPlaceThunk(place));
   };
 
+  const deletePlace = (id) => {
+    dispatch(deletePlaceThunk(id));
+  };
   return {
     places,
     loadPlaces,
     loadPlacesByCountry,
     loadPlacesByAuthor,
     createPlace,
+    deletePlace,
   };
 };
 

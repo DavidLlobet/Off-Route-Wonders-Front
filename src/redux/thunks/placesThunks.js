@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
   createPlaceAction,
+  deletePlaceAction,
   loadPlacesAction,
   loadPlacesByAuthorAction,
   loadPlacesByCountryAction,
@@ -46,5 +47,21 @@ export const createPlaceThunk = (place) => async (dispatch) => {
   );
   if (createPlace.status === 200) {
     dispatch(createPlaceAction(createPlace.data));
+  }
+};
+
+export const deletePlaceThunk = (id) => async (dispatch) => {
+  const storageUser = localStorage.getItem("user");
+  const { token } = JSON.parse(storageUser);
+  const deletePlace = await axios.post(
+    `${process.env.REACT_APP_URL_API}/delete/id`,
+    {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    }
+  );
+  if (deletePlace.status === 200) {
+    dispatch(deletePlaceAction(id));
   }
 };
