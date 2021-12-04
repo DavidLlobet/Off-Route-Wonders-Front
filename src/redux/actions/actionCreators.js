@@ -20,6 +20,11 @@ export const createPlaceAction = (place) => ({
   place,
 });
 
+export const deletePlaceAction = (id) => ({
+  type: actionTypes.deletePlace,
+  id,
+});
+
 export const loginUserAction = (user) => ({
   type: actionTypes.loginUser,
   user,
