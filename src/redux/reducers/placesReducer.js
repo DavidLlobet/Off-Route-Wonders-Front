@@ -19,6 +19,10 @@ const placesReducer = (places = [], action) => {
     case actionTypes.createPlace:
       newPlaces = [...places, action.place];
       break;
+
+    case actionTypes.deletePlace:
+      newPlaces = places.filter((place) => place.id !== action.id);
+      break;
     default:
       newPlaces = places;
   }
