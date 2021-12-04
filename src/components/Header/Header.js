@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import LoginButton from "../LoginButton/LoginButton";
 import LogoutButton from "../LogoutButton/LogoutButton";
 import "./Header.scss";
@@ -8,7 +9,9 @@ const Header = () => {
 
   return (
     <header title="header" className="header">
-      <p className="header__logo">Off Route Wonders</p>
+      <Link className="header__logo" to="home">
+        Off Route Wonders
+      </Link>
       <p className="header__continent">Europa</p>
       <p className="header__continent">África</p>
       <p className="header__continent">Américas</p>

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import PlaceByAuthorCard from "../PlaceByAuthorCard/PlacesByAuthorCard";
 
 const PlacesByAuthorList = ({ places }) => {
   return (
