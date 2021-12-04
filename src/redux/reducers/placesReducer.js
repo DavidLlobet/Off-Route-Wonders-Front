@@ -12,6 +12,10 @@ const placesReducer = (places = [], action) => {
       newPlaces = [...action.places];
       break;
 
+    case actionTypes.loadPlacesByAuthor:
+      newPlaces = [...action.places];
+      break;
+
     case actionTypes.createPlace:
       newPlaces = [...places, action.place];
       break;

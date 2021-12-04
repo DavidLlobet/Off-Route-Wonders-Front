@@ -2,6 +2,7 @@ import axios from "axios";
 import {
   createPlaceAction,
   loadPlacesAction,
+  loadPlacesByAuthorAction,
   loadPlacesByCountryAction,
 } from "../actions/actionCreators";
 
@@ -15,6 +16,20 @@ export const loadPlacesByCountryThunk = (idCountry) => async (dispatch) => {
     `${process.env.REACT_APP_URL_API}/country/${idCountry}`
   );
   dispatch(loadPlacesByCountryAction(response.data));
+};
+
+export const loadPlacesByAuthorThunk = () => async (dispatch) => {
+  const storageUser = localStorage.getItem("user");
+  const { token } = JSON.parse(storageUser);
+  const response = await axios.get(
+    `${process.env.REACT_APP_URL_API}/my-profile`,
+    {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    }
+  );
+  dispatch(loadPlacesByAuthorAction(response.data));
 };
 
 export const createPlaceThunk = (place) => async (dispatch) => {
