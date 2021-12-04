@@ -33,6 +33,7 @@ PlaceByAuthorCard.propTypes = {
     title: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(PropTypes.string.isRequired),
     author: PropTypes.object.isRequired,
-    date: PropTypes.string,
+    // date: PropTypes.string,
   }),
+  // onClick: PropTypes.func.isRequired,
 };
