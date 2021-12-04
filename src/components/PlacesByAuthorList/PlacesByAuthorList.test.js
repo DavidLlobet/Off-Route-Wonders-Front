@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
 import configureStore from "../../redux/store";
 import PlacesByAuthorList from "./PlacesByAuthorList";
 describe("Given a PlacesByAuthorList component", () => {
@@ -37,9 +38,11 @@ describe("Given a PlacesByAuthorList component", () => {
         },
       ];
       render(
-        <Provider store={store}>
-          <PlacesByAuthorList places={places} />
-        </Provider>
+        <Router>
+          <Provider store={store}>
+            <PlacesByAuthorList places={places} />
+          </Provider>
+        </Router>
       );
       const placesImages = screen.getAllByRole("img");
 

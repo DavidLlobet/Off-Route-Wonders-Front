@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap");
+
+.place-card {
+  display: flex;
+  width: 270px;
+  flex-direction: column;
+  margin-bottom: 50px;
+  border: 1px outset #000;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  &__info {
+    display: flex;
+    width: 270px;
+    justify-content: space-evenly;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-size: 18px;
+    margin: 0;
+  }
+
+  &__date {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-size: 18px;
+    margin: 0;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__button {
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: #fafcb7;
+    font-family: "Quattrocento Sans", sans-serif;
+  }
+}

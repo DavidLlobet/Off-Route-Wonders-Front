@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap");
+
+.user {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  display: flex;
+  align-self: flex-start;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.title {
+  font-size: 24px;
+  margin-top: 20px;
+  margin-left: 0;
+  line-height: 26px;
+  font-weight: 400;
+  font-family: "Quattrocento Sans", sans-serif;
+}
+
+.places-list {
+  display: flex;
+  flex-direction: column;
+}
