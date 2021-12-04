@@ -17,7 +17,7 @@ export const loginUserThunk = (user) => async (dispatch) => {
       const token = response.data.token;
       const user = jwtDecode(token);
       dispatch(loginUserAction(user));
-      localStorage.setItem("user", JSON.stringify({ token: token }));
+      localStorage.setItem("user", JSON.stringify({ token }));
     }
   } catch {}
 };

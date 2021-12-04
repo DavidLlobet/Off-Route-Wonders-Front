@@ -20,12 +20,12 @@ export const loadPlacesByCountryThunk = (idCountry) => async (dispatch) => {
 
 export const loadPlacesByAuthorThunk = () => async (dispatch) => {
   const storageUser = localStorage.getItem("user");
-  const { token } = JSON.parse(storageUser);
+  const token = JSON.parse(storageUser);
   const response = await axios.get(
     `${process.env.REACT_APP_URL_API}/my-profile`,
     {
       headers: {
-        Authorization: "Bearer " + token,
+        Authorization: "Bearer " + token.token,
       },
     }
   );
@@ -48,5 +48,3 @@ export const createPlaceThunk = (place) => async (dispatch) => {
     dispatch(createPlaceAction(createPlace.data));
   }
 };
-
-// `${process.env.REACT_APP_URL_API}/create`,
