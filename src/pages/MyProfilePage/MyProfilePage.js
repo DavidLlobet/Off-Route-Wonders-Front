@@ -10,6 +10,7 @@ const MyProfilePage = () => {
   useEffect(() => {
     loadPlacesByAuthor();
   }, [loadPlacesByAuthor]);
+
   return (
     <div className="profile">
       <div className="profile__card">

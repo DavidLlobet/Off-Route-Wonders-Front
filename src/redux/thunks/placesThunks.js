@@ -53,8 +53,8 @@ export const createPlaceThunk = (place) => async (dispatch) => {
 export const deletePlaceThunk = (id) => async (dispatch) => {
   const storageUser = localStorage.getItem("user");
   const { token } = JSON.parse(storageUser);
-  const deletePlace = await axios.post(
-    `${process.env.REACT_APP_URL_API}/delete/id`,
+  const deletePlace = await axios.delete(
+    `${process.env.REACT_APP_URL_API}/delete/${id}`,
     {
       headers: {
         Authorization: "Bearer " + token,
