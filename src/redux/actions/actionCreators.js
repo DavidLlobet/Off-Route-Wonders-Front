@@ -10,6 +10,11 @@ export const loadPlacesByCountryAction = (places) => ({
   places,
 });
 
+export const loadPlacesByAuthorAction = (places) => ({
+  type: actionTypes.loadPlacesByAuthor,
+  places,
+});
+
 export const createPlaceAction = (place) => ({
   type: actionTypes.createPlace,
   place,
