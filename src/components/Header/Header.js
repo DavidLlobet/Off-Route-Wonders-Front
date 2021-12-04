@@ -1,11 +1,21 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import useUser from "../../hooks/useUser";
 import LoginButton from "../LoginButton/LoginButton";
 import LogoutButton from "../LogoutButton/LogoutButton";
+import { useNavigate } from "react-router";
 import "./Header.scss";
 
 const Header = () => {
   const { isAuthenticated } = useSelector((store) => store.user);
+  const { logoutUser } = useUser();
+  let navigate = useNavigate();
+
+  const onClickLogout = async (event) => {
+    event.preventDefault();
+    logoutUser();
+    navigate("/home");
+  };
 
   return (
     <header title="header" className="header">
@@ -19,7 +29,7 @@ const Header = () => {
       <p className="header__continent">Oceania</p>
 
       <LoginButton />
-      {!isAuthenticated ? "" : <LogoutButton />}
+      {!isAuthenticated ? "" : <LogoutButton onClick={onClickLogout} />}
     </header>
   );
 };
