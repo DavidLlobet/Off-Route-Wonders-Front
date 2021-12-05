@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import MyProfilePage from "./pages/MyProfilePage/MyProfilePage";
 import CreateFormPage from "./pages/CreateFormPage/CreateFormPage";
 import DetailsPage from "./pages/DetailsPage/DetailsPage";
+import UpdateFormPage from "./pages/UpdateFormPage/UpdateFormPage";
 
 function App() {
   return (
@@ -21,6 +22,11 @@ function App() {
         <Route exact path="/login" element={<LoginPage />} />
         <Route exact path="/my-profile" element={<MyProfilePage />} />
         <Route exact path="/my-profile/create" element={<CreateFormPage />} />
+        <Route
+          exact
+          path="/my-profile/update/:id"
+          element={<UpdateFormPage />}
+        />
       </Routes>
       <Footer />
     </Router>

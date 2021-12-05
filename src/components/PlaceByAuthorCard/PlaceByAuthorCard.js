@@ -1,8 +1,14 @@
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router";
+
 import "./PlaceByAuthorCard.scss";
 
 const PlaceByAuthorCard = ({ place, onClick }) => {
   let date = new Date(place.date);
+  const navigate = useNavigate();
+  const goToUpdatePage = (placeId) => {
+    navigate(`/my-profile/update/${placeId}`);
+  };
 
   return (
     <>
@@ -24,7 +30,12 @@ const PlaceByAuthorCard = ({ place, onClick }) => {
           />
         </div>
         <div className="place-card__buttons">
-          <button className="place-card__button">Modificar</button>
+          <button
+            className="place-card__button"
+            onClick={() => goToUpdatePage(place.id, place)}
+          >
+            Modificar
+          </button>
           <button
             className="place-card__button"
             onClick={() => onClick(place.id)}
@@ -33,25 +44,6 @@ const PlaceByAuthorCard = ({ place, onClick }) => {
           </button>
         </div>
       </div>
-
-      {/* <p className="place__title">
-          {place.title} ({place.country.name})
-        </p>
-        <img
-          src={place.images[0]}
-          alt={place.title}
-          className="place__image"
-          width="50"
-          height="40"
-        />
-        <p className="place__info">
-          {date.getDate()}-{date.getMonth() + 1}-{date.getFullYear()}
-        </p>
-        <button className="place__button">Modificar</button>
-        <button className="place__button" onClick={() => onClick(place.id)}>
-          Eliminar
-        </button>
-      </div> */}
     </>
   );
 };
