@@ -2,6 +2,7 @@ import axios from "axios";
 import {
   createPlaceAction,
   deletePlaceAction,
+  loadPlaceAction,
   loadPlacesAction,
   loadPlacesByAuthorAction,
   loadPlacesByCountryAction,
@@ -31,6 +32,11 @@ export const loadPlacesByAuthorThunk = () => async (dispatch) => {
     }
   );
   dispatch(loadPlacesByAuthorAction(response.data));
+};
+
+export const loadPlaceThunk = (id) => async (dispatch) => {
+  const { data: place } = await axios.get(process.env.REACT_APP_URL_API + id);
+  dispatch(loadPlaceAction(place));
 };
 
 export const createPlaceThunk = (place) => async (dispatch) => {
