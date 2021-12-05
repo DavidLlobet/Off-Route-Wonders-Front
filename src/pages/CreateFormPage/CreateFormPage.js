@@ -51,20 +51,6 @@ const CreateFormPage = () => {
     event.preventDefault();
     const formData = new FormData();
 
-    // const a = {
-    //   title: placeData.title,
-    //   country: placeData.country,
-    //   text: placeData.text,
-    //   coordinates: {
-    //     longitude: placeData.longitude,
-    //     latitude: placeData.latitude,
-    //   },
-    //   author: "",
-    //   images: placeData.images,
-    // };
-
-    // console.log(a);
-
     formData.append("title", placeData.title);
     formData.append("country", placeData.country);
     formData.append("text", placeData.text);
@@ -91,6 +77,7 @@ const CreateFormPage = () => {
           name="country"
           onChange={changePlaceData}
         >
+          <option value="Escoge un país">Escoge un país</option>
           <option value="Albania">Albania</option>
           <option value="Filipinas">Filipinas</option>
           <option value="Vietnam">Vietnam</option>
