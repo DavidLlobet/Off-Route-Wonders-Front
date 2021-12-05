@@ -15,6 +15,11 @@ export const loadPlacesByAuthorAction = (places) => ({
   places,
 });
 
+export const loadPlaceAction = (place) => ({
+  type: actionTypes.loadPlace,
+  place,
+});
+
 export const createPlaceAction = (place) => ({
   type: actionTypes.createPlace,
   place,
