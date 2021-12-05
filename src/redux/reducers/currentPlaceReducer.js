@@ -8,6 +8,10 @@ const currentPlaceReducer = (place = {}, action) => {
       newPlace = { ...action.place };
       break;
 
+    case actionTypes.updatePlace:
+      newPlace = { ...action.place };
+      break;
+
     default:
       newPlace = place;
   }
