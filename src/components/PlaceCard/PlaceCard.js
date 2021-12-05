@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "./PlaceCard.scss";
 
-const PlaceCard = ({ place }) => {
+const PlaceCard = ({ place, onClick }) => {
   let date = new Date(place.date);
 
   return (
@@ -15,6 +15,7 @@ const PlaceCard = ({ place }) => {
         className="place__image"
         width="272"
         height="178"
+        onClick={() => onClick(place.id)}
       />
       <p className="place__info">
         Autor: {place.author.username} - {date.getDate()}-{date.getMonth() + 1}-
