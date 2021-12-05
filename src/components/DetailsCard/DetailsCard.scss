@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap");
+
+.details-card {
+  display: flex;
+  flex-direction: column;
+  width: 272px;
+  margin-left: 45px;
+  align-items: center;
+  margin-bottom: 30px;
+
+  &__title {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-size: 24px;
+  }
+
+  &__author {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-size: 20px;
+  }
+
+  &__image {
+    margin-bottom: 20px;
+  }
+
+  &__map {
+    width: 272px;
+    height: 178px;
+    margin-bottom: 20px;
+    background-image: url("../../images/Captura2.JPG");
+  }
+
+  &__text {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__separator {
+    width: 277px;
+    border: 1px solid #000;
+    margin-bottom: 20px;
+  }
+
+  &__comments {
+    font-size: 20px;
+  }
+}

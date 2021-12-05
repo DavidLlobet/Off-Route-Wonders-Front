@@ -91,6 +91,7 @@ const CreateFormPage = () => {
           name="country"
           onChange={changePlaceData}
         >
+          <option value="Escoge un país">Escoge un país</option>
           <option value="Albania">Albania</option>
           <option value="Filipinas">Filipinas</option>
           <option value="Vietnam">Vietnam</option>

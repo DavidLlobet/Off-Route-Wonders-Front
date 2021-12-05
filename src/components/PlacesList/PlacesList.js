@@ -1,16 +1,13 @@
 import PlaceCard from "../PlaceCard/PlaceCard";
 import PropTypes from "prop-types";
 import "./PlaceList.scss";
-import usePlace from "../../hooks/usePlace";
 import { useNavigate } from "react-router";
 
 const PlacesList = ({ places }) => {
   let navigate = useNavigate();
 
-  const { loadPlace } = usePlace();
   const loadOnClick = (id) => {
-    loadPlace(id);
-    navigate("/detail");
+    navigate(`/details/${id}`);
   };
 
   return (

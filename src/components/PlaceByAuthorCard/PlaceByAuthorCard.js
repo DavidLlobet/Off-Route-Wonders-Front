@@ -9,9 +9,8 @@ const PlaceByAuthorCard = ({ place, onClick }) => {
       <div title="place-item" className="place-card">
         <div className="place-card__info">
           <div className="place-card__text">
-            <p className="place-card__name">
-              {place.title} ({place.country.name})
-            </p>
+            <p className="place-card__name">{place.title}</p>
+            <p className="place-card__name">({place.country.name})</p>
             <p className="place-card__date">
               {date.getDate()}-{date.getMonth() + 1}-{date.getFullYear()}
             </p>
@@ -20,8 +19,8 @@ const PlaceByAuthorCard = ({ place, onClick }) => {
             src={place.images[0]}
             alt={place.title}
             className="place-card__image"
-            width="90"
-            height="50"
+            width="110"
+            height="70"
           />
         </div>
         <div className="place-card__buttons">

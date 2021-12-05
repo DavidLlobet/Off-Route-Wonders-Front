@@ -7,6 +7,7 @@ import CountryPage from "./pages/CountryPage/CountryPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MyProfilePage from "./pages/MyProfilePage/MyProfilePage";
 import CreateFormPage from "./pages/CreateFormPage/CreateFormPage";
+import DetailsPage from "./pages/DetailsPage/DetailsPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/home" element={<HomePage />} />
+        <Route exact path="/details/:id" element={<DetailsPage />} />
         <Route exact path="/country" element={<CountryPage />} />
         <Route exact path="/login" element={<LoginPage />} />
         <Route exact path="/my-profile" element={<MyProfilePage />} />
