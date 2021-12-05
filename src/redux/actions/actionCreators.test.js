@@ -7,6 +7,7 @@ import {
   loadPlacesByCountryAction,
   loginUserAction,
   registerUserAction,
+  updatePlaceAction,
 } from "./actionCreators";
 import actionTypes from "./actionTypes";
 
@@ -351,6 +352,50 @@ describe("When it calls a createPlaceAction", () => {
     };
 
     const result = createPlaceAction(newPlace);
+
+    expect(result).toEqual(expected);
+  });
+});
+
+describe("When it calls an updatePlaceAction", () => {
+  test("Then it should return a new place", () => {
+    const modifiedPlace = {
+      coordinates: {
+        longitude: 456546456,
+        latitude: 123454354,
+      },
+      author: {
+        username: "Mario González",
+      },
+      title: "Red Eye Theth",
+      country: {
+        name: "Albania",
+      },
+      images: [
+        "https://storage.googleapis.com/off-route-wonders.appspot.com/dylan-gillis-3e_tXW5O3GQ-unsplash-1638035068556-.jpg",
+        "https://storage.googleapis.com/off-route-wonders.appspot.com/2021105724573_1 (1)-1638035068569-.jpg",
+      ],
+      text: "Mola bastante",
+      comments: [
+        {
+          text: "¡Que guapo!",
+          author: {
+            username: "Marc",
+            id: "619fd3f198bdb970bc0c248e",
+          },
+          date: "2021-11-27T19:08:31.344Z",
+          id: "61a271aeec1d9f99c7672cea",
+        },
+      ],
+      date: "2021-11-27T17:44:29.550Z",
+      id: "61a26e7d1c9f711f24d1a8fc",
+    };
+    const expected = {
+      type: actionTypes.updatePlace,
+      place: modifiedPlace,
+    };
+
+    const result = updatePlaceAction(modifiedPlace);
 
     expect(result).toEqual(expected);
   });

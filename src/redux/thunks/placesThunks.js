@@ -6,6 +6,7 @@ import {
   loadPlacesAction,
   loadPlacesByAuthorAction,
   loadPlacesByCountryAction,
+  updatePlaceAction,
 } from "../actions/actionCreators";
 
 export const loadPlacesThunk = () => async (dispatch) => {
@@ -55,6 +56,24 @@ export const createPlaceThunk = (place) => async (dispatch) => {
   );
   if (createPlace.status === 200) {
     dispatch(createPlaceAction(createPlace.data));
+  }
+};
+
+export const updatePlaceThunk = (place, id) => async (dispatch) => {
+  const storageUser = localStorage.getItem("user");
+  const { token } = JSON.parse(storageUser);
+  const updatePlace = await axios.put(
+    `${process.env.REACT_APP_URL_API}/update/${id}`,
+    place,
+    {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    }
+  );
+
+  if (updatePlace.status === 200) {
+    dispatch(updatePlaceAction(updatePlace.data));
   }
 };
 

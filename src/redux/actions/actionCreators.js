@@ -25,6 +25,11 @@ export const createPlaceAction = (place) => ({
   place,
 });
 
+export const updatePlaceAction = (place) => ({
+  type: actionTypes.updatePlace,
+  place,
+});
+
 export const deletePlaceAction = (id) => ({
   type: actionTypes.deletePlace,
   id,
