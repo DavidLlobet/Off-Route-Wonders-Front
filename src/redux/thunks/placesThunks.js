@@ -35,7 +35,9 @@ export const loadPlacesByAuthorThunk = () => async (dispatch) => {
 };
 
 export const loadPlaceThunk = (id) => async (dispatch) => {
-  const { data: place } = await axios.get(process.env.REACT_APP_URL_API + id);
+  const { data: place } = await axios.get(
+    `${process.env.REACT_APP_URL_API}/${id}`
+  );
   dispatch(loadPlaceAction(place));
 };
 
