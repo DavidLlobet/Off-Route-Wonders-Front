@@ -24,7 +24,7 @@ const mockPlaces = [
       "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6b/80/0d.jpg",
     ],
     author: {
-      username: "David",
+      username: "Mario",
     },
     date: "28 - 11 - 2021",
     country: {
@@ -49,7 +49,14 @@ export const handlers = [
     }
   ),
   rest.get(
-    "https://proyecto-final-cavi-back.herokuapp.com/places",
+    "https://proyecto-final-llobet-back.herokuapp.com/places",
+    async (req, res, ctx) => {
+      const response = res(ctx.json(mockPlaces));
+      return response;
+    }
+  ),
+  rest.get(
+    "https://proyecto-final-llobet-back.herokuapp.com/places/my-profile",
     async (req, res, ctx) => {
       const response = res(ctx.json(mockPlaces));
       return response;
