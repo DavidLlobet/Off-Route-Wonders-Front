@@ -6,7 +6,6 @@ import usePlace from "../../hooks/usePlace";
 
 const DetailsPage = () => {
   const { place, loadPlace } = usePlace();
-  console.log(place);
 
   const { id } = useParams();
   useEffect(() => {
