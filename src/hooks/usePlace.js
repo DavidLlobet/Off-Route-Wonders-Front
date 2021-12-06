@@ -12,8 +12,8 @@ const usePlace = () => {
     },
     [dispatch]
   );
-  const updatePlace = (id, place) => {
-    dispatch(updatePlaceThunk(id, place));
+  const updatePlace = (place, id) => {
+    dispatch(updatePlaceThunk(place, id));
   };
 
   return { place, loadPlace, updatePlace };
