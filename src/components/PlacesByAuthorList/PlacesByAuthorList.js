@@ -4,9 +4,15 @@ import "./PlacesByAuthorList.scss";
 import PlaceByAuthorCard from "../PlaceByAuthorCard/PlaceByAuthorCard";
 import { useSelector } from "react-redux";
 import CreateButton from "../CreateButton/CreateButton";
+import jwtDecode from "jwt-decode";
 
 const PlacesByAuthorList = ({ places }) => {
-  const user = useSelector(({ user }) => user);
+  let { isAuthenticated } = useSelector((store) => store.user);
+  const tokenUser = localStorage.getItem("user");
+  const loggedUser = jwtDecode(tokenUser);
+  if (tokenUser) {
+    isAuthenticated = true;
+  }
   const { deletePlace } = usePlaces();
 
   const deleteOnClick = (id) => {
@@ -15,7 +21,9 @@ const PlacesByAuthorList = ({ places }) => {
 
   return (
     <>
-      <p className="user">{user.user.username}</p>
+      {isAuthenticated === true && (
+        <p className="user">{loggedUser.username}</p>
+      )}
       <CreateButton />
       <p className="title">Mis lugares</p>
       <div title="places-list" className="list">

@@ -7,7 +7,11 @@ import { useNavigate } from "react-router";
 import "./Header.scss";
 
 const Header = () => {
-  const { isAuthenticated } = useSelector((store) => store.user);
+  let { isAuthenticated } = useSelector((store) => store.user);
+  const tokenUser = localStorage.getItem("user");
+  if (tokenUser) {
+    isAuthenticated = true;
+  }
   const { logoutUser } = useUser();
   let navigate = useNavigate();
 
