@@ -1,8 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
+import { useNavigate } from "react-router";
 import "./FilterButton.scss";
 
 const FilterButton = () => {
+  let navigate = useNavigate();
+
+  const onClick = (id) => {
+    navigate(`/country/${id}`);
+  };
   return (
     <div className="dropdown d-block d-sm-none d-none d-sm-block d-md-none d-none d-md-block d-lg-none">
       <button
@@ -17,10 +23,18 @@ const FilterButton = () => {
         <button className="dropdown-item disabled" type="button">
           Europa
         </button>
-        <button className="dropdown-item" type="button">
+        <button
+          className="dropdown-item"
+          type="button"
+          onClick={() => onClick("61a104bcec1d9f99c7672ca4")}
+        >
           Albania
         </button>
-        <button className="dropdown-item" type="button">
+        <button
+          className="dropdown-item"
+          type="button"
+          onClick={() => onClick("61ae49c9bb94b276dd223bb4")}
+        >
           Alemania
         </button>
         <button className="dropdown-item" type="button">
