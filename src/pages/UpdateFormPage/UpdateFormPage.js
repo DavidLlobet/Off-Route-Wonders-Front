@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import usePlace from "../../hooks/usePlace";
-// import "./CreateFormPage.scss";
 
 const UpdateFormPage = () => {
   const { updatePlace, place, loadPlace } = usePlace();
@@ -21,17 +20,34 @@ const UpdateFormPage = () => {
     latitude: place?.coordinates?.latitude,
   };
 
+  console.log(place);
+
   const [placeData, setPlaceData] = useState(initialData);
+
+  useEffect(() => {
+    setPlaceData(place);
+  }, [place]);
+
+  const [isDisable, setIsDisable] = useState(true);
+
+  const checkForm = () => {
+    if (
+      placeData.title !== "" &&
+      placeData.country !== "" &&
+      placeData.text !== "" &&
+      placeData.longitude !== 0 &&
+      placeData.latitude !== 0
+    ) {
+      setIsDisable(false);
+    }
+  };
 
   const changePlaceData = (event) => {
     setPlaceData({
       ...placeData,
-      [event.target.id]:
-        event.target.type === "file"
-          ? event.target.files[0]
-          : event.target.value,
+      [event.target.id]: event.target.value,
     });
-    // checkForm();
+    checkForm();
   };
 
   const changeCoordinatesData = (event) => {
@@ -42,22 +58,22 @@ const UpdateFormPage = () => {
         [event.target.id]: event.target.value,
       },
     });
-    // checkForm();
+    checkForm();
   };
 
-  const onSubmit = async (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
-    const formData = new FormData();
-
-    formData.append("title", placeData.title);
-    formData.append("country", placeData.country);
-    formData.append("text", placeData.text);
-    formData.append("images", placeData.images);
-    formData.append("coordinates[longitude]", placeData.coordinates.longitude);
-    formData.append("coordinates[latitude]", placeData.coordinates.latitude);
-
-    await updatePlace(formData, id);
-    // navigate("/home");
+    const newPlace = {
+      title: placeData.title,
+      country: placeData.country,
+      text: placeData.text,
+      coordinates: {
+        longitude: placeData.longitude,
+        latitude: placeData.latitude,
+      },
+    };
+    updatePlace(newPlace, id);
+    navigate("/home");
   };
 
   return (
@@ -99,7 +115,7 @@ const UpdateFormPage = () => {
           type="number"
           className="create-form__text"
           id="longitude"
-          value={placeData.coordinates.longitude}
+          value={placeData.longitude}
           onChange={changeCoordinatesData}
         />
         <p className="create-form__title">Latitud: </p>
@@ -108,10 +124,10 @@ const UpdateFormPage = () => {
           type="number"
           className="create-form__text"
           id="latitude"
-          value={placeData.coordinates.latitude}
+          value={placeData.latitude}
           onChange={changeCoordinatesData}
         />
-        <p className="create-form__title">
+        {/* <p className="create-form__title">
           Haz click para agregar una o más imágenes:
         </p>
         <label htmlFor="images"></label>
@@ -122,7 +138,7 @@ const UpdateFormPage = () => {
           id="images"
           value={placeData.file}
           onChange={changePlaceData}
-        />
+        /> */}
         <p className="create-form__text-title">
           Escribe el contenido del artículo aquí:{" "}
         </p>
@@ -137,7 +153,7 @@ const UpdateFormPage = () => {
         <button
           type="submit"
           className="login-form__button"
-          // disabled={isDisable}
+          disabled={isDisable}
         >
           Modificar
         </button>

@@ -12,18 +12,19 @@ const CreateFormPage = () => {
 
   const [placeData, setPlaceData] = useState(initialData);
   const { createPlace } = usePlaces();
-  // const [isDisable, setIsDisable] = useState(true);
+  const [isDisable, setIsDisable] = useState(true);
 
-  // const checkForm = () => {
-  //   if (
-  //     placeData.title !== "" &&
-  //     placeData.text !== "" &&
-  //     placeData.coordinates.longitude !== 0 &&
-  //     placeData.coordinates.latitude !== 0
-  //   ) {
-  //     setIsDisable(false);
-  //   }
-  // };
+  const checkForm = () => {
+    if (
+      placeData.title !== "" &&
+      placeData.text !== "" &&
+      placeData.country !== "Escoge un país" &&
+      placeData.coordinates.longitude !== 0 &&
+      placeData.coordinates.latitude !== 0
+    ) {
+      setIsDisable(false);
+    }
+  };
 
   const changePlaceData = (event) => {
     setPlaceData({
@@ -33,7 +34,7 @@ const CreateFormPage = () => {
           ? event.target.files[0]
           : event.target.value,
     });
-    // checkForm();
+    checkForm();
   };
 
   const changeCoordinatesData = (event) => {
@@ -44,7 +45,7 @@ const CreateFormPage = () => {
         [event.target.id]: event.target.value,
       },
     });
-    // checkForm();
+    checkForm();
   };
 
   const onSubmit = async (event) => {
@@ -132,7 +133,7 @@ const CreateFormPage = () => {
         <button
           type="submit"
           className="login-form__button"
-          // disabled={isDisable}
+          disabled={isDisable}
         >
           Crear
         </button>
