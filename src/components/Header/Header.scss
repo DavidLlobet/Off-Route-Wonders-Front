@@ -42,7 +42,9 @@
     &__continent {
       display: inline;
       font-size: 22px;
-      // margin-top: 3px;
+      background-color: #fff;
+      padding: 16px;
+      border: none;
     }
     &__country {
       font-size: 22px;
