@@ -20,7 +20,7 @@ afterAll(() => {
 
 describe("Given a CountryPage component,", () => {
   describe("When it renders", () => {
-    test("Then it should render a page with a heading that says 'Entradas recientes'", () => {
+    test("Then it should render a page with a heading", () => {
       render(
         <Router>
           <Provider store={store}>
@@ -28,7 +28,9 @@ describe("Given a CountryPage component,", () => {
           </Provider>
         </Router>
       );
-      const title = screen.getByText("Entradas recientes");
+      const title = screen.getByRole("button", {
+        name: "Alemania",
+      });
 
       expect(title).toBeInTheDocument();
     });

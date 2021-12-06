@@ -1,3 +1,4 @@
+import "./CountryPage.scss";
 import { useEffect } from "react";
 import { useParams } from "react-router";
 import FilterButton from "../../components/FilterButton/FilterButton";
@@ -16,7 +17,7 @@ const CountryPage = () => {
   return (
     <div>
       <FilterButton />
-      {countryName && <h1>{countryName}</h1>}
+      {countryName && <h1 className="country-title">{countryName}</h1>}
       <PlacesList places={places} />
     </div>
   );

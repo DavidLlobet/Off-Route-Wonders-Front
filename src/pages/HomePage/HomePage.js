@@ -20,6 +20,7 @@ const HomePage = () => {
           seem out of this world
         </p>
       </div>
+      <h1 className="home-title">Entradas recientes</h1>
       <PlacesList places={places} />
     </div>
   );

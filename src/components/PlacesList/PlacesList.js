@@ -12,7 +12,6 @@ const PlacesList = ({ places }) => {
 
   return (
     <>
-      <h1>Entradas recientes</h1>
       <div className="separation">
         <div className="separation__line"></div>
       </div>
