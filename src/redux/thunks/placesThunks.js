@@ -60,8 +60,6 @@ export const createPlaceThunk = (place) => async (dispatch) => {
 };
 
 export const updatePlaceThunk = (place, id) => async (dispatch) => {
-  console.log(place);
-  console.log(id);
   const storageUser = localStorage.getItem("user");
   const { token } = JSON.parse(storageUser);
   const updatePlace = await axios.put(

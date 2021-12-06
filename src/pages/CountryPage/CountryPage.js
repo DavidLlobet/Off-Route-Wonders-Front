@@ -6,7 +6,8 @@ import usePlaces from "../../hooks/usePlaces";
 
 const CountryPage = () => {
   const { places, loadPlacesByCountry } = usePlaces();
-  console.log(places);
+
+  const countryName = places[0]?.country.name;
 
   const { id } = useParams();
   useEffect(() => {
@@ -15,6 +16,7 @@ const CountryPage = () => {
   return (
     <div>
       <FilterButton />
+      {countryName && <h1>{countryName}</h1>}
       <PlacesList places={places} />
     </div>
   );

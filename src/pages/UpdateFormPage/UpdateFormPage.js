@@ -20,8 +20,6 @@ const UpdateFormPage = () => {
     latitude: place?.coordinates?.latitude,
   };
 
-  console.log(place);
-
   const [placeData, setPlaceData] = useState(initialData);
 
   useEffect(() => {
