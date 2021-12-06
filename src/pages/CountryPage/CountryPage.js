@@ -1,3 +1,4 @@
+import "./CountryPage.scss";
 import { useEffect } from "react";
 import { useParams } from "react-router";
 import FilterButton from "../../components/FilterButton/FilterButton";
@@ -6,7 +7,8 @@ import usePlaces from "../../hooks/usePlaces";
 
 const CountryPage = () => {
   const { places, loadPlacesByCountry } = usePlaces();
-  console.log(places);
+
+  const countryName = places[0]?.country.name;
 
   const { id } = useParams();
   useEffect(() => {
@@ -15,6 +17,7 @@ const CountryPage = () => {
   return (
     <div>
       <FilterButton />
+      {countryName && <h1 className="country-title">{countryName}</h1>}
       <PlacesList places={places} />
     </div>
   );
