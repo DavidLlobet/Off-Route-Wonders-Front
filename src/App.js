@@ -18,7 +18,7 @@ function App() {
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/home" element={<HomePage />} />
         <Route exact path="/details/:id" element={<DetailsPage />} />
-        <Route exact path="/country" element={<CountryPage />} />
+        <Route exact path="/country/:id" element={<CountryPage />} />
         <Route exact path="/login" element={<LoginPage />} />
         <Route exact path="/my-profile" element={<MyProfilePage />} />
         <Route exact path="/my-profile/create" element={<CreateFormPage />} />

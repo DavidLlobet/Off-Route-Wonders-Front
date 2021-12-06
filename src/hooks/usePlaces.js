@@ -16,9 +16,12 @@ const usePlaces = () => {
     dispatch(loadPlacesThunk());
   }, [dispatch]);
 
-  const loadPlacesByCountry = useCallback(() => {
-    dispatch(loadPlacesByCountryThunk());
-  }, [dispatch]);
+  const loadPlacesByCountry = useCallback(
+    (id) => {
+      dispatch(loadPlacesByCountryThunk(id));
+    },
+    [dispatch]
+  );
 
   const loadPlacesByAuthor = useCallback(() => {
     dispatch(loadPlacesByAuthorThunk());
