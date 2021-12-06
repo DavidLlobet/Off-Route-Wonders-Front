@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import "./LoginButton.scss";
 
 const LoginButton = () => {
-  const { isAuthenticated } = useSelector((store) => store.user);
+  let { isAuthenticated } = useSelector((store) => store.user);
+  const tokenUser = localStorage.getItem("user");
+  if (tokenUser) {
+    isAuthenticated = true;
+  }
   return !isAuthenticated ? (
     <Link className="login" to="login">
       Entra
