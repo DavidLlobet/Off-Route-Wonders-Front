@@ -26,11 +26,82 @@ const Header = () => {
       <Link className="header__logo" to="home">
         Off Route Wonders
       </Link>
-      <p className="header__continent">Europa</p>
+      <div className="dropdown">
+        <button className="dropbtn header__continent">Europa</button>
+        <div className="dropdown-content">
+          <a href="Albania" className="header__country">
+            Albania
+          </a>
+          <a href="Alemania" className="header__country">
+            Alemania
+          </a>
+          <a href="Austria" className="header__country">
+            Austria
+          </a>
+        </div>
+      </div>
+      <div className="dropdown">
+        <button className="dropbtn header__continent">África</button>
+        <div className="dropdown-content">
+          <a href="Albania" className="header__country">
+            Albania
+          </a>
+          <a href="Alemania" className="header__country">
+            Alemania
+          </a>
+          <a href="Austria" className="header__country">
+            Austria
+          </a>
+        </div>
+      </div>
+      <div className="dropdown">
+        <button className="dropbtn header__continent">Américas</button>
+        <div className="dropdown-content">
+          <a href="Albania" className="header__country">
+            Albania
+          </a>
+          <a href="Alemania" className="header__country">
+            Alemania
+          </a>
+          <a href="Austria" className="header__country">
+            Austria
+          </a>
+        </div>
+      </div>
+      <div className="dropdown">
+        <button className="dropbtn header__continent">Asia</button>
+        <div className="dropdown-content">
+          <a href="Albania" className="header__country">
+            Albania
+          </a>
+          <a href="Alemania" className="header__country">
+            Alemania
+          </a>
+          <a href="Austria" className="header__country">
+            Austria
+          </a>
+        </div>
+      </div>
+      <div className="dropdown">
+        <button className="dropbtn header__continent">Oceania</button>
+        <div className="dropdown-content">
+          <a href="Albania" className="header__country">
+            Albania
+          </a>
+          <a href="Alemania" className="header__country">
+            Alemania
+          </a>
+          <a href="Austria" className="header__country">
+            Austria
+          </a>
+        </div>
+      </div>
+
+      {/* <p className="header__continent">Europa</p>
       <p className="header__continent">África</p>
       <p className="header__continent">Américas</p>
       <p className="header__continent">Asia</p>
-      <p className="header__continent">Oceania</p>
+      <p className="header__continent">Oceania</p> */}
 
       <LoginButton />
       {!isAuthenticated ? "" : <LogoutButton onClick={onClickLogout} />}
