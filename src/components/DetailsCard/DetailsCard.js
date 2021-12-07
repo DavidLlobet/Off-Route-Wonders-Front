@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import usePlace from "../../hooks/usePlace";
-import useUser from "../../hooks/useUser";
-
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import icon from "../../icon/map-marker-icon.png";
 import "./DetailsCard.scss";
 
 const DetailsCard = ({ place }) => {
@@ -12,7 +14,6 @@ const DetailsCard = ({ place }) => {
   if (tokenUser) {
     isAuthenticated = true;
   }
-  const { user } = useUser();
   const { updatePlace } = usePlace();
 
   const [comment, setComment] = useState("");
@@ -36,9 +37,15 @@ const DetailsCard = ({ place }) => {
       country: place.country.name,
       comments: place.comments,
     };
-    console.log(userComment);
     updatePlace(userComment, place.id);
   };
+
+  const iconMarker = L.icon({
+    iconUrl: icon,
+    iconRetinaUrl: icon,
+    iconSize: [50, 50],
+    shadowUrl: icon,
+  });
 
   return (
     <div className="details-card">
@@ -53,7 +60,26 @@ const DetailsCard = ({ place }) => {
         width="272"
         height="178"
       />
-      <div className="details-card__map"></div>
+
+      <MapContainer
+        center={{
+          lat: place.coordinates?.latitude,
+          lng: place.coordinates?.longitude,
+        }}
+        zoom={3}
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+        />
+        <Marker
+          position={{
+            lat: place.coordinates?.latitude,
+            lng: place.coordinates?.longitude,
+          }}
+          icon={iconMarker}
+        />
+      </MapContainer>
       <p className="details-card__text">{place.text}</p>
       <div className="details-card__separator"></div>
       <p className="details-card__comments">Comentarios</p>
