@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import "./PlaceByAuthorCard.scss";
 
 const PlaceByAuthorCard = ({ place, onClick }) => {
+  console.log(place);
   let date = new Date(place.date);
   const navigate = useNavigate();
   const goToUpdatePage = (placeId) => {

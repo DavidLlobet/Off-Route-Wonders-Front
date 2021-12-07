@@ -7,8 +7,9 @@ import usePlaces from "../../hooks/usePlaces";
 
 const CountryPage = () => {
   const { places, loadPlacesByCountry } = usePlaces();
+  console.log(places);
 
-  const countryName = places[0]?.country.name;
+  const countryName = places[0]?.country?.name;
 
   const { id } = useParams();
   useEffect(() => {

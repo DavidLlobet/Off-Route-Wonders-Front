@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
 import { useNavigate } from "react-router";
 import "./FilterButton.scss";
+import countries from "../../countries";
 
 const FilterButton = () => {
   let navigate = useNavigate();
@@ -26,7 +27,7 @@ const FilterButton = () => {
         <button
           className="dropdown-item"
           type="button"
-          onClick={() => onClick("61a104bcec1d9f99c7672ca4")}
+          onClick={() => onClick(countries.albania)}
         >
           Albania
         </button>
