@@ -1,22 +1,21 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import usePlace from "../../hooks/usePlace";
+import useUser from "../../hooks/useUser";
+
 import "./DetailsCard.scss";
 
 const DetailsCard = ({ place }) => {
+  let { isAuthenticated } = useSelector((store) => store.user);
+  const tokenUser = localStorage.getItem("user");
+
+  if (tokenUser) {
+    isAuthenticated = true;
+  }
+  const { user } = useUser();
   const { updatePlace } = usePlace();
-  // const { id } = useParams();
 
   const [comment, setComment] = useState("");
-
-  // const initialData = {
-  //   comments: "",
-  // };
-
-  // const [placeData, setPlaceData] = useState(initialData);
-  // useEffect(() => {
-  //   setPlaceData(place);
-  // }, [place]);
 
   const [isDisable, setIsDisable] = useState(true);
   const checkForm = () => {
@@ -34,8 +33,10 @@ const DetailsCard = ({ place }) => {
     event.preventDefault();
     place.comments.push(comment);
     const userComment = {
+      country: place.country.name,
       comments: place.comments,
     };
+    console.log(userComment);
     updatePlace(userComment, place.id);
   };
 
@@ -56,35 +57,48 @@ const DetailsCard = ({ place }) => {
       <p className="details-card__text">{place.text}</p>
       <div className="details-card__separator"></div>
       <p className="details-card__comments">Comentarios</p>
-      <form
-        className="details-card__form"
-        noValidate
-        autoComplete="off"
-        onSubmit={onSubmit}
-      >
-        <label htmlFor="comment"></label>
-        <input
-          type="text"
-          id="comments"
-          placeholder="Escribe tu comentario aquí"
-          name="comments"
-          className="details-card__form-input"
-          value={comment}
-          required
-          onChange={changePlaceData}
-        ></input>
-        <button
-          type="submit"
-          className="details-card__button"
-          disabled={isDisable}
-        >
-          Validar
-        </button>
-      </form>
+      {isAuthenticated === true && (
+        <>
+          <form
+            className="details-card__form"
+            noValidate
+            autoComplete="off"
+            onSubmit={onSubmit}
+          >
+            <textarea
+              name="comment"
+              className="details-card__textarea"
+              maxLength="150"
+              rows="4"
+              cols="37"
+              id="text"
+              value={comment}
+              onChange={changePlaceData}
+            ></textarea>
+            <button
+              type="submit"
+              className="details-card__button"
+              disabled={isDisable}
+            >
+              Publica
+            </button>
+          </form>{" "}
+          <div className="details-card__separator"></div>
+        </>
+      )}
+      {isAuthenticated === false && (
+        <p>Regístrate para poder comentar las publicaciones</p>
+      )}
+
       <div className="details-card__comments-container">
-        {/* {place.comments.map((comment) => (
-          <div />
-        ))} */}
+        {place.comments.map((comment) => (
+          <>
+            <p className="details-card__comment">{comment}</p>
+            <p className="details-card__comment-author">
+              {place.author.username}
+            </p>
+          </>
+        ))}
       </div>
     </div>
   );
