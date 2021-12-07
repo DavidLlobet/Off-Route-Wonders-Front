@@ -92,7 +92,7 @@ const CreateFormPage = () => {
           className="create-form__text"
           onChange={changePlaceData}
         ></input>
-        <p className="create-form__title">Coordenadas </p>
+        <p className="create-form__title">Coordenadas del lugar </p>
         <p className="create-form__title">Longitud: </p>
         <label htmlFor="longitude"></label>
         <input

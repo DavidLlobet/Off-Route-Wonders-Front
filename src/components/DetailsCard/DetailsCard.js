@@ -12,7 +12,6 @@ const DetailsCard = ({ place }) => {
   if (tokenUser) {
     isAuthenticated = true;
   }
-  const { user } = useUser();
   const { updatePlace } = usePlace();
 
   const [comment, setComment] = useState("");
@@ -53,7 +52,14 @@ const DetailsCard = ({ place }) => {
         width="272"
         height="178"
       />
-      <div className="details-card__map"></div>
+      <iframe
+        className="map"
+        title="map"
+        width="272"
+        height="178"
+        src={`https://www.openstreetmap.org/export/embed.html?bbox=${place.coordinates?.longitude}%2C${place.coordinates?.latitude}&amp;layer=mapnik&amp;marker={place.coordinates?.latitude}%2C{place.coordinates?.longitude}`}
+      ></iframe>
+      {/* <div className="details-card__map"></div> */}
       <p className="details-card__text">{place.text}</p>
       <div className="details-card__separator"></div>
       <p className="details-card__comments">Comentarios</p>
