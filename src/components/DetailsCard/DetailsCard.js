@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import usePlace from "../../hooks/usePlace";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
@@ -6,9 +6,22 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import icon from "../../icon/map-marker-icon.png";
 import "./DetailsCard.scss";
+import jwtDecode from "jwt-decode";
+import { useDispatch } from "react-redux";
+import { loginUserAction } from "../../redux/actions/actionCreators";
 
 const DetailsCard = ({ place }) => {
-  let { isAuthenticated } = useSelector((store) => store.user);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const token = JSON.parse(
+      localStorage.getItem(process.env.REACT_APP_LOCAL_STORAGE)
+    );
+    if (token) {
+      dispatch(loginUserAction(jwtDecode(token.token)));
+    }
+  }, [dispatch]);
+
+  let { isAuthenticated, user } = useSelector((store) => store.user);
   const tokenUser = localStorage.getItem("user");
 
   if (tokenUser) {
@@ -119,10 +132,18 @@ const DetailsCard = ({ place }) => {
       <div className="details-card__comments-container">
         {place.comments.map((comment) => (
           <>
-            <p className="details-card__comment">{comment}</p>
-            <p className="details-card__comment-author">
-              {place.author.username}
+            <p key={place.id} className="details-card__comment">
+              {comment}
             </p>
+            {place.author.name === user.username ? (
+              <p key={place.title} className="details-card__comment-author">
+                {place.author.username}
+              </p>
+            ) : (
+              <p key={place.title} className="details-card__comment-author">
+                {place.author.username}
+              </p>
+            )}
           </>
         ))}
       </div>

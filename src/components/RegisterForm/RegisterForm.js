@@ -27,7 +27,9 @@ const RegisterForm = () => {
 
   return (
     <>
-      <p className="title">¿Todavía no estás registrado? ¿A qué esperas? </p>
+      <p className="register-title">
+        ¿Todavía no estás registrado? ¿A qué esperas?{" "}
+      </p>
       <form
         className="register-form"
         noValidate
@@ -58,9 +60,11 @@ const RegisterForm = () => {
         <input
           type="email"
           id="email"
+          pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
           placeholder="Introduce un correo electrónico"
           name="password"
           className="register-form__input"
+          required
           onChange={changeUserData}
         ></input>
         <button type="submit" className="register-form__button">

@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Port+Lligat+Sans&display=swap");
-
-.title {
+.register-title {
   height: 54px;
-  width: 239px;
-  font-size: 18px;
+  width: 277px;
+  font-size: 20px;
   margin-top: 20px;
   margin-left: 31px;
+  margin-bottom: 30px;
 }
 
 .register-form {
@@ -22,7 +21,7 @@
     border-radius: 20px;
     padding-left: 10px;
     background-color: #fff;
-    font-family: "Port Lligat Sans", sans-serif;
+    font-family: "Quattrocento Sans", sans-serif;
   }
 
   &__button {
@@ -37,7 +36,7 @@
     border-radius: 20px;
     background-color: #e5e5e5;
     margin-top: 10px;
-    font-family: "Port Lligat Sans", sans-serif;
+    font-family: "Quattrocento Sans", sans-serif;
   }
 }
 
