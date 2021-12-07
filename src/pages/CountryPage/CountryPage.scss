@@ -1,3 +1,6 @@
-.country-title {
-  margin-bottom: 20px;
+@media (min-width: 992px) {
+  .country-title {
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
 }
