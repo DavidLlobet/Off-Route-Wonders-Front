@@ -23,7 +23,7 @@
   }
 
   &__map {
-    width: 272px;
+    width: 277px;
     height: 178px;
     margin-bottom: 20px;
     background-image: url("../../images/Captura2.JPG");
@@ -73,4 +73,11 @@
   &__comment-author {
     font-weight: 500;
   }
+}
+
+.leaflet-touch {
+  height: 210px;
+  width: 277px;
+  margin-top: 10px;
+  margin-bottom: 70px;
 }

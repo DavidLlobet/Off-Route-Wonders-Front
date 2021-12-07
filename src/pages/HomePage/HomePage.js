@@ -6,6 +6,7 @@ import usePlaces from "../../hooks/usePlaces";
 
 const HomePage = () => {
   const { places, loadPlaces } = usePlaces();
+  // console.log(places);
 
   useEffect(() => {
     loadPlaces();
