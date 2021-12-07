@@ -1,11 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Port+Lligat+Sans&display=swap");
+.login-container {
+  display: flex;
+  flex-direction: column;
+}
 
-.title {
+.login-title {
   height: 54px;
-  width: 239px;
-  font-size: 18px;
+  width: 277px;
+  font-size: 20px;
   margin-top: 20px;
   margin-left: 31px;
+  margin-bottom: 20px;
 }
 
 .login-form {
