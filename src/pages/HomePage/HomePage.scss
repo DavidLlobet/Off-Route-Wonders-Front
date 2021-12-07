@@ -3,13 +3,7 @@
 }
 
 .home-photo {
-  background-image: url("../../images/lenin-peak-base-camp-1024x683.jpg");
-  margin-left: 40px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  width: 277px;
-  height: 180px;
-  background-size: 277px;
+  display: none;
 
   &__text {
     display: none;
