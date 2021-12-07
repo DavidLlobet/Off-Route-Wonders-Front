@@ -23,7 +23,6 @@ const Header = () => {
 
   const onClick = (event, id) => {
     event.preventDefault();
-    console.log("caca");
     navigate(`/country/${id}`);
   };
 
