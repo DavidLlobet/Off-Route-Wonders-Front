@@ -27,7 +27,6 @@ const UpdateFormPage = () => {
 
   useEffect(() => {
     if (place.country?.name) {
-      console.log(place);
       setPlaceData({
         title: place.title,
         country: place.country.name,
@@ -60,17 +59,6 @@ const UpdateFormPage = () => {
     });
     checkForm();
   };
-
-  /* const changeCoordinatesData = (event) => {
-    setPlaceData({
-      ...placeData,
-      coordinates: {
-        ...placeData.coordinates,
-        [event.target.id]: event.target.value,
-      },
-    });
-    checkForm();
-  }; */
 
   const onSubmit = (event) => {
     event.preventDefault();

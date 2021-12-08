@@ -5,7 +5,7 @@ const PlaceCard = ({ place, onClick }) => {
 
   return (
     <div title="place-item" className="place">
-      <p className="place__title">
+      <p className="country">
         {place.title} ({place?.country?.name})
       </p>
       <img
