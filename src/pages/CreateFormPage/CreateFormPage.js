@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import usePlaces from "../../hooks/usePlaces";
 import "./CreateFormPage.scss";
 
 const CreateFormPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const initialData = {
     title: "",
     country: "",
@@ -109,9 +112,7 @@ const CreateFormPage = () => {
           id="latitude"
           onChange={changeCoordinatesData}
         />
-        <p className="create-form__title">
-          Haz click para agregar una o más imágenes:
-        </p>
+        <p className="create-form__title">Haz click para agregar una imagen:</p>
         <label htmlFor="images"></label>
         <input
           type="file"
@@ -124,6 +125,7 @@ const CreateFormPage = () => {
           Escribe el contenido del artículo aquí:{" "}
         </p>
         <textarea
+          className="create-form__text-area"
           name="message"
           rows="10"
           cols="30"

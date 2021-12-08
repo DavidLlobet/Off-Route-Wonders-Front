@@ -4,6 +4,9 @@ import PlacesByAuthorList from "../../components/PlacesByAuthorList/PlacesByAuth
 import "./MyProfilePage.scss";
 
 const MyProfilePage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { places, loadPlacesByAuthor } = usePlaces();
 
   useEffect(() => {

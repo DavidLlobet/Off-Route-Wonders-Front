@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.7.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.1",
+    "@mui/material": "^5.2.3",
     "@react-leaflet/core": "^1.0.2",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
@@ -61,12 +65,5 @@
   },
   "devDependencies": {
     "husky": "^7.0.0"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "!src/index.js",
-      "!src/reportWebVitals.js",
-      "!src/mocks/handlers.js"
-    ]
   }
 }

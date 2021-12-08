@@ -3,6 +3,9 @@ import { useNavigate, useParams } from "react-router";
 import usePlace from "../../hooks/usePlace";
 
 const UpdateFormPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { updatePlace, place, loadPlace } = usePlace();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -143,6 +146,7 @@ const UpdateFormPage = () => {
           Escribe el contenido del artículo aquí:{" "}
         </p>
         <textarea
+          className="create-form__text-area"
           name="message"
           rows="10"
           cols="30"

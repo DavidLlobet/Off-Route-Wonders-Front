@@ -5,8 +5,10 @@ import PlacesList from "../../components/PlacesList/PlacesList";
 import usePlaces from "../../hooks/usePlaces";
 
 const HomePage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { places, loadPlaces } = usePlaces();
-  // console.log(places);
 
   useEffect(() => {
     loadPlaces();

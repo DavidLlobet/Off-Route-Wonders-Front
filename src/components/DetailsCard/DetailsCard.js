@@ -11,6 +11,9 @@ import { useDispatch } from "react-redux";
 import { loginUserAction } from "../../redux/actions/actionCreators";
 
 const DetailsCard = ({ place }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const dispatch = useDispatch();
   useEffect(() => {
     const token = JSON.parse(
@@ -61,88 +64,96 @@ const DetailsCard = ({ place }) => {
   });
 
   return (
-    <div className="details-card">
-      <h1 className="details-card__title">
-        {place.title} ({place?.country?.name})
-      </h1>
-      <p className="details-card__author">Autor: {place.author.username}</p>
-      <img
-        src={place.images[0]}
-        alt={place.title}
-        className="details-card__image"
-        width="272"
-        height="178"
+    <>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
       />
-
-      <MapContainer
-        center={{
-          lat: place.coordinates?.latitude,
-          lng: place.coordinates?.longitude,
-        }}
-        zoom={3}
-      >
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          // attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+      <div className="details-card">
+        <h1 className="details-card__title">
+          {place.title} ({place?.country?.name})
+        </h1>
+        <p className="details-card__author">Autor: {place.author.username}</p>
+        <img
+          src={place.images[0]}
+          alt={place.title}
+          className="details-card__image"
+          width="272"
+          height="178"
         />
-        <Marker
-          position={{
+
+        <MapContainer
+          center={{
             lat: place.coordinates?.latitude,
             lng: place.coordinates?.longitude,
           }}
-          icon={iconMarker}
-        />
-      </MapContainer>
-      <p className="details-card__text">{place.text}</p>
-      <div className="details-card__separator"></div>
-      <p className="details-card__comments">Comentarios</p>
-      {isAuthenticated === true && (
-        <>
-          <form
-            className="details-card__form"
-            noValidate
-            autoComplete="off"
-            onSubmit={onSubmit}
-          >
-            <textarea
-              name="comment"
-              className="details-card__textarea"
-              maxLength="150"
-              rows="4"
-              cols="37"
-              id="text"
-              value={comment}
-              onChange={changePlaceData}
-            ></textarea>
-            <button
-              type="submit"
-              className="details-card__button"
-              disabled={isDisable}
-            >
-              Publica
-            </button>
-          </form>{" "}
-          <div className="details-card__separator"></div>
-        </>
-      )}
-      {isAuthenticated === false && (
-        <p>Regístrate para poder comentar las publicaciones</p>
-      )}
+          zoom={3}
+        >
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            // attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+          />
+          <Marker
+            position={{
+              lat: place.coordinates?.latitude,
+              lng: place.coordinates?.longitude,
+            }}
+            icon={iconMarker}
+          />
+        </MapContainer>
+        <p className="details-card__text">{place.text}</p>
+        {/* <Rating name="half-rating" defaultValue={2.5} precision={0.5} /> */}
 
-      <div className="details-card__comments-container">
-        {place.comments.map((comment) => (
+        <div className="details-card__separator"></div>
+        <p className="details-card__comments">Comentarios</p>
+        {isAuthenticated === true && (
           <>
-            <p key={place.id} className="details-card__comment">
-              {comment}
-            </p>
-
-            <p key={place.title} className="details-card__comment-author">
-              {user.username}
-            </p>
+            <form
+              className="details-card__form"
+              noValidate
+              autoComplete="off"
+              onSubmit={onSubmit}
+            >
+              <textarea
+                name="comment"
+                className="details-card__textarea"
+                maxLength="150"
+                rows="4"
+                cols="37"
+                id="text"
+                value={comment}
+                onChange={changePlaceData}
+              ></textarea>
+              <button
+                type="submit"
+                className="details-card__button"
+                disabled={isDisable}
+              >
+                Publica
+              </button>
+            </form>{" "}
+            <div className="details-card__separator"></div>
           </>
-        ))}
+        )}
+        {isAuthenticated === false && (
+          <p>Regístrate para poder comentar las publicaciones</p>
+        )}
+
+        <div className="details-card__comments-container">
+          {place.comments.map((comment) => (
+            <>
+              <p key={place.id} className="details-card__comment">
+                {comment}
+              </p>
+
+              <p key={place.title} className="details-card__comment-author">
+                {user.username}
+              </p>
+            </>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
