@@ -7,6 +7,7 @@ describe("Given a DetailsCard component", () => {
   describe("When it receives a place", () => {
     test("Then it should render that place", () => {
       const store = configureStore();
+      jest.mock("jwt-decode", () => () => ({}));
 
       const place = {
         id: "61a29a80a8700455c9903d38",
