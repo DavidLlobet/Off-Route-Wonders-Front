@@ -6,6 +6,9 @@ import PlacesList from "../../components/PlacesList/PlacesList";
 import usePlaces from "../../hooks/usePlaces";
 
 const CountryPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { places, loadPlacesByCountry } = usePlaces();
 
   const countryName = places[0]?.country?.name;

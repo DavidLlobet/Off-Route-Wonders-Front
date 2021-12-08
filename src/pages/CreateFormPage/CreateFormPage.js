@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import usePlaces from "../../hooks/usePlaces";
 import "./CreateFormPage.scss";
 
 const CreateFormPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const initialData = {
     title: "",
     country: "",

@@ -11,6 +11,9 @@ import { useDispatch } from "react-redux";
 import { loginUserAction } from "../../redux/actions/actionCreators";
 
 const DetailsCard = ({ place }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const dispatch = useDispatch();
   useEffect(() => {
     const token = JSON.parse(
