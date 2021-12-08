@@ -2,6 +2,7 @@ import "./LoginForm.scss";
 import { useState } from "react";
 import useUser from "../../hooks/useUser";
 import { useNavigate } from "react-router";
+import { Toaster } from "react-hot-toast";
 
 const LoginForm = () => {
   const initialUser = {
@@ -18,7 +19,7 @@ const LoginForm = () => {
     loginUser(userData);
     setTimeout(() => {
       navigate("/home");
-    }, 200);
+    }, 2000);
   };
 
   const changeUserData = (event) => {
@@ -74,6 +75,7 @@ const LoginForm = () => {
             Validar
           </button>
         </form>
+        <Toaster />
         <div className="line"></div>
       </div>
     </>

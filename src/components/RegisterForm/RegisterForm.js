@@ -1,6 +1,7 @@
 import "./RegisterForm.scss";
 import { useState } from "react";
 import useUser from "../../hooks/useUser";
+import { Toaster } from "react-hot-toast";
 
 const RegisterForm = () => {
   const initialUser = {
@@ -72,9 +73,7 @@ const RegisterForm = () => {
         </button>
       </form>
       <p className="register-message">
-        {message === true
-          ? "¡Te has registrado en Off Route Wonders! Logéate y cuéntanos tus aventuras"
-          : ""}
+        <Toaster />
       </p>
     </>
   );
