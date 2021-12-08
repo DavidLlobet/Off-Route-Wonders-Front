@@ -73,7 +73,6 @@ const UpdateFormPage = () => {
         latitude: placeData.coordinates.latitude,
       },
     };
-    console.log(newPlace);
 
     updatePlace(newPlace, id);
     navigate("/home");

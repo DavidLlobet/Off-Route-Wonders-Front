@@ -1,4 +1,3 @@
-// import PropTypes from "prop-types";
 import "./PlaceCard.scss";
 
 const PlaceCard = ({ place, onClick }) => {
@@ -26,12 +25,3 @@ const PlaceCard = ({ place, onClick }) => {
 };
 
 export default PlaceCard;
-
-// PlaceCard.propTypes = {
-//   place: PropTypes.shape({
-//     title: PropTypes.string.isRequired,
-//     images: PropTypes.arrayOf(PropTypes.string.isRequired),
-//     author: PropTypes.object.isRequired,
-//     date: PropTypes.string,
-//   }),
-// };

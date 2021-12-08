@@ -30,26 +30,4 @@ describe("Given a Header component", () => {
       expect(button).toBeInTheDocument();
     });
   });
-  describe("When the user clicks the submit button", () => {
-    test.only("Then it should call a function", () => {
-      const store = configureStore();
-
-      const onClickFunction = jest.fn();
-
-      render(
-        <Router>
-          <Provider store={store}>
-            <Header onSubmit={onClickFunction} />;
-          </Provider>
-        </Router>
-      );
-
-      const button = screen.getByRole("link", {
-        name: "Albania",
-      });
-      userEvent.click(button);
-
-      expect(onClickFunction).toHaveBeenCalled();
-    });
-  });
 });
