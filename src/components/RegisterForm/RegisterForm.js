@@ -70,9 +70,7 @@ const RegisterForm = () => {
           Validar
         </button>
       </form>
-      <p className="register-message">
-        <Toaster />
-      </p>
+      <Toaster />
     </>
   );
 };
