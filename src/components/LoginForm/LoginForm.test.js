@@ -1,7 +1,6 @@
 import LoginForm from "./LoginForm";
 import configureStore from "../../redux/store";
 import { BrowserRouter as Router } from "react-router-dom";
-import userEvent from "@testing-library/user-event";
 const { screen, render } = require("@testing-library/react");
 const { Provider } = require("react-redux");
 

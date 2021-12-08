@@ -20,6 +20,10 @@ const CountryPage = () => {
   return (
     <div>
       <FilterButton />
+      {countryName === "Albania" && <div className="albania-photo"></div>}
+      {countryName === "Filipinas" && <div className="filipinas-photo"></div>}
+      {countryName === "Vietnam" && <div className="vietnam-photo"></div>}
+
       {countryName && <h1 className="country-title">{countryName}</h1>}
       <PlacesList places={places} />
     </div>

@@ -9,6 +9,9 @@ const PlaceByAuthorCard = ({ place, onClick }) => {
   const goToUpdatePage = (placeId) => {
     navigate(`/my-profile/update/${placeId}`);
   };
+  const loadOnClick = (id) => {
+    navigate(`/details/${id}`);
+  };
 
   return (
     <>
@@ -27,6 +30,7 @@ const PlaceByAuthorCard = ({ place, onClick }) => {
             className="place-card__image"
             width="110"
             height="70"
+            onClick={() => loadOnClick(place.id)}
           />
         </div>
         <div className="place-card__buttons">

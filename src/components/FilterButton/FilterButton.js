@@ -65,6 +65,23 @@ const FilterButton = () => {
         <button className="dropdown-item" type="button">
           Burkina Faso
         </button>
+        <button className="dropdown-item disabled" type="button">
+          Asia
+        </button>
+        <button
+          className="dropdown-item"
+          type="button"
+          onClick={() => onClick(countries.filipinas)}
+        >
+          Filipinas
+        </button>
+        <button
+          className="dropdown-item"
+          type="button"
+          onClick={() => onClick(countries.vietnam)}
+        >
+          Vietnam
+        </button>
       </div>
     </div>
   );

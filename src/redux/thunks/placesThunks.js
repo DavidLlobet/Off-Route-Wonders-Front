@@ -1,4 +1,5 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 import {
   createPlaceAction,
   deletePlaceAction,
@@ -56,6 +57,9 @@ export const createPlaceThunk = (place) => async (dispatch) => {
   );
   if (createPlace.status === 200) {
     dispatch(createPlaceAction(createPlace.data));
+    toast.success("¡Has creado un nuevo lugar!", {
+      duration: 3000,
+    });
   }
 };
 

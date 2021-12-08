@@ -14,7 +14,9 @@ describe("Given a LoginButton component", () => {
   describe("When it receives a Logout function through props and the button is clicked", () => {
     test("Then it should call the function", () => {
       const onClickFunction = jest.fn();
+
       render(<LogoutButton onClick={onClickFunction} />);
+
       const button = screen.getByRole("button");
       userEvent.click(button);
 

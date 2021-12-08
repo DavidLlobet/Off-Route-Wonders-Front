@@ -139,15 +139,11 @@ const DetailsCard = ({ place }) => {
 
         <div className="details-card__comments-container">
           {place.comments.map((comment) => (
-            <>
-              <p key={place.id} className="details-card__comment">
-                {comment}
-              </p>
+            <div key={place.id}>
+              <p className="details-card__comment">{comment}</p>
 
-              <p key={place.title} className="details-card__comment-author">
-                {user.username}
-              </p>
-            </>
+              <p className="details-card__comment-author">{user.username}</p>
+            </div>
           ))}
         </div>
       </div>

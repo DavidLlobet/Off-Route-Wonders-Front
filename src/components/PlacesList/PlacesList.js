@@ -10,7 +10,7 @@ const PlacesList = ({ places }) => {
     navigate(`/details/${id}`);
   };
 
-  return (
+  return places.length ? (
     <>
       <div className="separation">
         <div className="separation__line"></div>
@@ -21,6 +21,8 @@ const PlacesList = ({ places }) => {
         ))}
       </div>
     </>
+  ) : (
+    <h1>Loading...</h1>
   );
 };
 

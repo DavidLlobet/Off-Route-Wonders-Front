@@ -1,5 +1,5 @@
 import "./HomePage.scss";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import FilterButton from "../../components/FilterButton/FilterButton";
 import PlacesList from "../../components/PlacesList/PlacesList";
 import usePlaces from "../../hooks/usePlaces";
@@ -9,10 +9,12 @@ const HomePage = () => {
     window.scrollTo(0, 0);
   }, []);
   const { places, loadPlaces } = usePlaces();
+  const [placesList, setPlacesList] = useState([]);
 
   useEffect(() => {
     loadPlaces();
-  }, [loadPlaces]);
+    setPlacesList(places);
+  }, [loadPlaces, places]);
 
   return (
     <div>
@@ -24,7 +26,7 @@ const HomePage = () => {
         </p>
       </div>
       <h1 className="home-title">Entradas recientes</h1>
-      <PlacesList places={places} />
+      <PlacesList places={placesList} />
     </div>
   );
 };

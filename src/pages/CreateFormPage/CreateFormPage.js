@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 import usePlaces from "../../hooks/usePlaces";
+import { useNavigate } from "react-router";
+
 import "./CreateFormPage.scss";
+import { Toaster } from "react-hot-toast";
 
 const CreateFormPage = () => {
+  let navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -63,6 +68,9 @@ const CreateFormPage = () => {
     formData.append("coordinates[latitude]", placeData.coordinates.latitude);
 
     await createPlace(formData);
+    setTimeout(() => {
+      navigate("/home");
+    }, 2000);
   };
 
   return (
@@ -147,6 +155,7 @@ const CreateFormPage = () => {
           Crear
         </button>
       </form>
+      <Toaster />
     </>
   );
 };

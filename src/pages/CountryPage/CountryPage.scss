@@ -1,6 +1,39 @@
+.country-title {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
 @media (min-width: 992px) {
   .country-title {
     margin-top: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+  }
+
+  .albania-photo {
+    background-image: url("../../images/albania.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    height: 825px;
+    margin-bottom: 30px;
+  }
+  .filipinas-photo {
+    background-image: url("../../images/filipinas.webp");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    height: 825px;
+    margin-bottom: 30px;
+  }
+  .vietnam-photo {
+    background-image: url("../../images/vietnam.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    height: 825px;
+    margin-bottom: 30px;
   }
 }
