@@ -74,9 +74,10 @@ const CreateFormPage = () => {
         onSubmit={onSubmit}
       >
         <p className="create-form__title">Escoge un país de la lista: </p>
-        <label htmlFor="countries"></label>
+        <label htmlFor="country"></label>
         <select
           className="create-form__country"
+          data-testid="country"
           id="country"
           name="country"
           onChange={changePlaceData}
@@ -91,6 +92,7 @@ const CreateFormPage = () => {
         <input
           type="text"
           id="title"
+          data-testid="title"
           name="place"
           className="create-form__text"
           onChange={changePlaceData}
@@ -102,6 +104,7 @@ const CreateFormPage = () => {
           type="number"
           className="create-form__text"
           id="longitude"
+          data-testid="longitude"
           onChange={changeCoordinatesData}
         />
         <p className="create-form__title">Latitud: </p>
@@ -110,6 +113,7 @@ const CreateFormPage = () => {
           type="number"
           className="create-form__text"
           id="latitude"
+          data-testid="latitude"
           onChange={changeCoordinatesData}
         />
         <p className="create-form__title">Haz click para agregar una imagen:</p>
@@ -119,17 +123,20 @@ const CreateFormPage = () => {
           multiple
           className="create-form__images"
           id="images"
+          data-testid="images"
           onChange={changePlaceData}
         />
         <p className="create-form__text-title">
           Escribe el contenido del artículo aquí:{" "}
         </p>
+        <label htmlFor="text"></label>
         <textarea
           className="create-form__text-area"
           name="message"
           rows="10"
           cols="30"
           id="text"
+          data-testid="text"
           onChange={changePlaceData}
         ></textarea>
         <button

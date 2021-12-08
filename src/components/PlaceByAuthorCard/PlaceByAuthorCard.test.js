@@ -33,8 +33,16 @@ describe("Given a PlaceCard component", () => {
       );
 
       const title = screen.getByRole("img", { class: "place-card__image" });
+      const button1 = screen.getByRole("button", {
+        name: "Modificar",
+      });
+      const button2 = screen.getByRole("button", {
+        name: "Eliminar",
+      });
 
       expect(title).toBeInTheDocument();
+      expect(button1).toBeInTheDocument();
+      expect(button2).toBeInTheDocument();
     });
   });
   // describe("When it receives an onClick function through props and the button is clicked", () => {

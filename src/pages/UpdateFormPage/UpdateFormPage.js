@@ -15,18 +15,28 @@ const UpdateFormPage = () => {
   }, [loadPlace, id]);
 
   const initialData = {
-    title: place?.title,
-    country: place?.country?.name,
-    images: place?.images,
-    text: place?.text,
-    longitude: place?.coordinates?.longitude,
-    latitude: place?.coordinates?.latitude,
+    title: "",
+    country: "",
+    images: "",
+    text: "",
+    longitude: "",
+    latitude: "",
   };
 
   const [placeData, setPlaceData] = useState(initialData);
 
   useEffect(() => {
-    setPlaceData(place);
+    if (place.country?.name) {
+      console.log(place);
+      setPlaceData({
+        title: place.title,
+        country: place.country.name,
+        images: place.images,
+        text: place.text,
+        longitude: place.coordinates.longitude,
+        latitude: place.coordinates.latitude,
+      });
+    }
   }, [place]);
 
   const [isDisable, setIsDisable] = useState(true);
@@ -51,7 +61,7 @@ const UpdateFormPage = () => {
     checkForm();
   };
 
-  const changeCoordinatesData = (event) => {
+  /* const changeCoordinatesData = (event) => {
     setPlaceData({
       ...placeData,
       coordinates: {
@@ -60,7 +70,7 @@ const UpdateFormPage = () => {
       },
     });
     checkForm();
-  };
+  }; */
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -69,11 +79,10 @@ const UpdateFormPage = () => {
       country: placeData.country,
       text: placeData.text,
       coordinates: {
-        longitude: placeData.coordinates.longitude,
-        latitude: placeData.coordinates.latitude,
+        longitude: placeData.longitude,
+        latitude: placeData.latitude,
       },
     };
-    console.log(newPlace);
 
     updatePlace(newPlace, id);
     navigate("/home");
@@ -119,7 +128,7 @@ const UpdateFormPage = () => {
           className="create-form__text"
           id="longitude"
           value={placeData.longitude}
-          onChange={changeCoordinatesData}
+          onChange={changePlaceData}
         />
         <p className="create-form__title">Latitud: </p>
         <label htmlFor="latitude"></label>
@@ -128,7 +137,7 @@ const UpdateFormPage = () => {
           className="create-form__text"
           id="latitude"
           value={placeData.latitude}
-          onChange={changeCoordinatesData}
+          onChange={changePlaceData}
         />
         {/* <p className="create-form__title">
           Haz click para agregar una o más imágenes:

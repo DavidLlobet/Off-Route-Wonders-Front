@@ -60,7 +60,6 @@ const DetailsCard = ({ place }) => {
     iconUrl: icon,
     iconRetinaUrl: icon,
     iconSize: [50, 50],
-    // shadowUrl: icon,
   });
 
   return (
@@ -102,7 +101,6 @@ const DetailsCard = ({ place }) => {
           />
         </MapContainer>
         <p className="details-card__text">{place.text}</p>
-        {/* <Rating name="half-rating" defaultValue={2.5} precision={0.5} /> */}
 
         <div className="details-card__separator"></div>
         <p className="details-card__comments">Comentarios</p>

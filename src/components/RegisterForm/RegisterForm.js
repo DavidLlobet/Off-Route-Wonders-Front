@@ -11,12 +11,10 @@ const RegisterForm = () => {
 
   const [userData, setUserData] = useState(initialUser);
   const { registerUser } = useUser();
-  const [message, setMessage] = useState(false);
 
   const onSubmit = async (event) => {
     event.preventDefault();
     registerUser(userData);
-    setMessage(true);
   };
 
   const changeUserData = (event) => {
@@ -72,9 +70,7 @@ const RegisterForm = () => {
           Validar
         </button>
       </form>
-      <p className="register-message">
-        <Toaster />
-      </p>
+      <Toaster />
     </>
   );
 };
