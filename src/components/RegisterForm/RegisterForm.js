@@ -72,7 +72,9 @@ const RegisterForm = () => {
         </button>
       </form>
       <p className="register-message">
-        {message === true ? "¡Te has registrado en Off Route Wonders!" : ""}
+        {message === true
+          ? "¡Te has registrado en Off Route Wonders! Logéate y cuéntanos tus aventuras"
+          : ""}
       </p>
     </>
   );

@@ -1,5 +1,6 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
+import toast from "react-hot-toast";
 import {
   loginUserAction,
   logoutUserAction,
@@ -14,8 +15,11 @@ export const loginUserThunk = (user) => async (dispatch) => {
   if (response.status === 200) {
     const token = response.data.token;
     const user = jwtDecode(token);
-    dispatch(loginUserAction(user));
     localStorage.setItem("user", JSON.stringify({ token }));
+    dispatch(loginUserAction(user));
+    toast.success("Te has logeado correctamente");
+  } else {
+    toast.error("No has introducido tus datos correctamente");
   }
 };
 
@@ -25,6 +29,7 @@ export const registerUserThunk = (user) => async (dispatch) => {
     user
   );
   if (response.status === 200) {
+    toast.success("Te has registrado correctamente");
     dispatch(registerUserAction(response.data));
   }
 };
