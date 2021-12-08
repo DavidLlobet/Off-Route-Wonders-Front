@@ -1,13 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureStore from "../../redux/store";
-import PlaceCard from "../PlaceCard/PlaceCard";
+import DetailsCard from "./DetailsCard";
+jest.mock("jwt-decode", () => () => ({}));
 
 describe("Given a DetailsCard component", () => {
   describe("When it receives a place", () => {
     test("Then it should render that place", () => {
       const store = configureStore();
-      jest.mock("jwt-decode", () => () => ({}));
 
       const place = {
         id: "61a29a80a8700455c9903d38",
@@ -22,17 +22,21 @@ describe("Given a DetailsCard component", () => {
         country: {
           name: "Filipinas",
         },
+        comments: [],
+        coordinates: {
+          longitude: "43.4343",
+          latitude: "21.433",
+        },
       };
 
       render(
         <Provider store={store}>
-          <PlaceCard place={place} />
+          <DetailsCard place={place} />
         </Provider>
       );
+      const image = screen.getByRole("img", { name: "Blue Eye Theth" });
 
-      const title = screen.getByRole("img", { class: "details-card__image" });
-
-      expect(title).toBeInTheDocument();
+      expect(image).toBeInTheDocument();
     });
   });
 });
