@@ -66,10 +66,12 @@ const UpdateFormPage = () => {
       country: placeData.country,
       text: placeData.text,
       coordinates: {
-        longitude: placeData.longitude,
-        latitude: placeData.latitude,
+        longitude: placeData.coordinates.longitude,
+        latitude: placeData.coordinates.latitude,
       },
     };
+    console.log(newPlace);
+
     updatePlace(newPlace, id);
     navigate("/home");
   };
