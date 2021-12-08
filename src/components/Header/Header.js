@@ -52,9 +52,9 @@ const Header = () => {
       <div className="dropdown">
         <button className="dropbtn header__continent">África</button>
         <div className="dropdown-content">
-          <a href="Albania" className="header__country">
+          {/* <a href="Albania" className="header__country">
             Albania
-          </a>
+          </a> */}
           <a href="Alemania" className="header__country">
             Alemania
           </a>
@@ -66,9 +66,9 @@ const Header = () => {
       <div className="dropdown">
         <button className="dropbtn header__continent">Américas</button>
         <div className="dropdown-content">
-          <a href="Albania" className="header__country">
+          {/* <a href="Albania" className="header__country">
             Albania
-          </a>
+          </a> */}
           <a href="Alemania" className="header__country">
             Alemania
           </a>
@@ -80,9 +80,9 @@ const Header = () => {
       <div className="dropdown">
         <button className="dropbtn header__continent">Asia</button>
         <div className="dropdown-content">
-          <a href="Albania" className="header__country">
+          {/* <a href="Albania" className="header__country">
             Albania
-          </a>
+          </a> */}
           <a href="Alemania" className="header__country">
             Alemania
           </a>
@@ -94,9 +94,9 @@ const Header = () => {
       <div className="dropdown">
         <button className="dropbtn header__continent">Oceania</button>
         <div className="dropdown-content">
-          <a href="Albania" className="header__country">
+          {/* <a href="Albania" className="header__country">
             Albania
-          </a>
+          </a> */}
           <a href="Alemania" className="header__country">
             Alemania
           </a>
