@@ -57,7 +57,7 @@ const DetailsCard = ({ place }) => {
     iconUrl: icon,
     iconRetinaUrl: icon,
     iconSize: [50, 50],
-    shadowUrl: icon,
+    // shadowUrl: icon,
   });
 
   return (
@@ -83,7 +83,7 @@ const DetailsCard = ({ place }) => {
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+          // attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
         />
         <Marker
           position={{
@@ -135,15 +135,10 @@ const DetailsCard = ({ place }) => {
             <p key={place.id} className="details-card__comment">
               {comment}
             </p>
-            {place.author.name === user.username ? (
-              <p key={place.title} className="details-card__comment-author">
-                {place.author.username}
-              </p>
-            ) : (
-              <p key={place.title} className="details-card__comment-author">
-                {place.author.username}
-              </p>
-            )}
+
+            <p key={place.title} className="details-card__comment-author">
+              {user.username}
+            </p>
           </>
         ))}
       </div>

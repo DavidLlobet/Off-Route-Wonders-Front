@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <header title="header" className="header">
-      <Link className="header__logo" to="home">
+      <Link className="logo" to="home">
         Off Route Wonders
       </Link>
       <div className="dropdown">
