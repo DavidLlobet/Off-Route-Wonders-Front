@@ -146,6 +146,7 @@ const UpdateFormPage = () => {
           Escribe el contenido del artículo aquí:{" "}
         </p>
         <textarea
+          className="create-form__text-area"
           name="message"
           rows="10"
           cols="30"

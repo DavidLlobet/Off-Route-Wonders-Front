@@ -112,9 +112,7 @@ const CreateFormPage = () => {
           id="latitude"
           onChange={changeCoordinatesData}
         />
-        <p className="create-form__title">
-          Haz click para agregar una o más imágenes:
-        </p>
+        <p className="create-form__title">Haz click para agregar una imagen:</p>
         <label htmlFor="images"></label>
         <input
           type="file"
@@ -127,6 +125,7 @@ const CreateFormPage = () => {
           Escribe el contenido del artículo aquí:{" "}
         </p>
         <textarea
+          className="create-form__text-area"
           name="message"
           rows="10"
           cols="30"
