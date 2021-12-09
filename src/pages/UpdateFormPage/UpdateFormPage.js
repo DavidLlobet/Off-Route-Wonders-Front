@@ -44,9 +44,7 @@ const UpdateFormPage = () => {
     if (
       placeData.title !== "" &&
       placeData.country !== "" &&
-      placeData.text !== "" &&
-      placeData.longitude !== 0 &&
-      placeData.latitude !== 0
+      placeData.text !== ""
     ) {
       setIsDisable(false);
     }

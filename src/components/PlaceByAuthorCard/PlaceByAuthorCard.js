@@ -36,7 +36,7 @@ const PlaceByAuthorCard = ({ place, onClick }) => {
         <div className="place-card__buttons">
           <button
             className="place-card__button"
-            onClick={() => goToUpdatePage(place.id, place)}
+            onClick={() => goToUpdatePage(place.id)}
           >
             Modificar
           </button>
