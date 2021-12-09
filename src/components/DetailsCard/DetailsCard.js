@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import usePlace from "../../hooks/usePlace";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -7,7 +7,6 @@ import L from "leaflet";
 import icon from "../../icon/map-marker-icon.png";
 import "./DetailsCard.scss";
 import jwtDecode from "jwt-decode";
-import { useDispatch } from "react-redux";
 import { loginUserAction } from "../../redux/actions/actionCreators";
 
 const DetailsCard = ({ place }) => {

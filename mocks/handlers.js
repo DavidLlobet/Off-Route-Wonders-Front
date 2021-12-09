@@ -37,29 +37,25 @@ export const handlers = [
   rest.post(
     "https://proyecto-final-llobet-back.herokuapp.com/user/login",
     async (req, res, ctx) => {
-      const response = res(ctx.json(mockToken));
-      return response;
+      res(ctx.json(mockToken));
     }
   ),
   rest.post(
     "https://proyecto-final-llobet-back.herokuapp.com/user/register",
     async (req, res, ctx) => {
-      const response = res(ctx.json(mockId));
-      return response;
+      res(ctx.json(mockId));
     }
   ),
   rest.get(
     "https://proyecto-final-llobet-back.herokuapp.com/places",
     async (req, res, ctx) => {
-      const response = res(ctx.json(mockPlaces));
-      return response;
+      res(ctx.json(mockPlaces));
     }
   ),
   rest.get(
     "https://proyecto-final-llobet-back.herokuapp.com/places/my-profile",
     async (req, res, ctx) => {
-      const response = res(ctx.json(mockPlaces));
-      return response;
+      res(ctx.json(mockPlaces));
     }
   ),
 ];
