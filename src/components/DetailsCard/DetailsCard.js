@@ -87,10 +87,7 @@ const DetailsCard = ({ place }) => {
           }}
           zoom={3}
         >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            // attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
-          />
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           <Marker
             position={{
               lat: place.coordinates?.latitude,

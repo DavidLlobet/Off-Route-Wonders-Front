@@ -12,22 +12,21 @@
 
 @media (min-width: 992px) {
   .home-photo {
-    background-image: url("../../images/lenin-peak-base-camp-1024x683.jpg");
-    display: flex;
-    justify-content: center;
     align-items: center;
+    background-image: url("../../images/lenin-peak-base-camp-1024x683.jpg");
     background-size: cover;
+    display: flex;
     height: 825px;
+    justify-content: center;
     margin-bottom: 30px;
 
     &__text {
-      display: flex;
-      position: absolute;
-      text-align: center;
-      height: 155px;
-      width: 650px;
-      font-size: 43px;
       color: #fff;
+      display: flex;
+      font-size: 43px;
+      height: 155px;
+      text-align: center;
+      width: 650px;
     }
   }
 }

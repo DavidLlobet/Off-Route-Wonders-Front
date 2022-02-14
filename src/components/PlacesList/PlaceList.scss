@@ -3,18 +3,18 @@ body {
 }
 
 h1 {
-  text-align: center;
   font-size: 30px;
+  font-weight: 400;
   margin-bottom: 0px;
   line-height: 41px;
   list-style: none;
-  font-weight: 400;
+  text-align: center;
 }
 
 .list {
+  align-items: center;
   display: flex;
   flex-direction: column-reverse;
-  align-items: center;
 }
 
 @media (min-width: 992px) {
@@ -22,21 +22,21 @@ h1 {
     font-size: 44px;
   }
   .separation {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
 
     &__line {
-      display: flex;
-      width: 204px;
       border: 1px solid #000;
+      display: flex;
       margin: 15px 0 40px;
+      width: 204px;
     }
   }
   .list {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
   }
 }

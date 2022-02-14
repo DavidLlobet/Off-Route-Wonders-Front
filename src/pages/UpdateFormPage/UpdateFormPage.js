@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import usePlace from "../../hooks/usePlace";
+import "./UpdateFormPage.scss";
 
 const UpdateFormPage = () => {
   useEffect(() => {
@@ -77,15 +78,15 @@ const UpdateFormPage = () => {
   return (
     <>
       <form
-        className="create-form"
+        className="update-form"
         noValidate
         autoComplete="off"
         onSubmit={onSubmit}
       >
-        <p className="create-form__title">Escoge un país de la lista: </p>
+        <p className="update-form__title">Escoge un país de la lista: </p>
         <label htmlFor="countries"></label>
         <select
-          className="create-form__country"
+          className="update-form__country"
           id="country"
           name="country"
           value={placeData.country}
@@ -96,31 +97,31 @@ const UpdateFormPage = () => {
           <option value="Filipinas">Filipinas</option>
           <option value="Vietnam">Vietnam</option>
         </select>
-        <p className="create-form__title">Nombre del lugar: </p>
+        <p className="update-form__title">Nombre del lugar: </p>
         <label htmlFor="place"></label>
         <input
           type="text"
           id="title"
           name="place"
           value={placeData.title}
-          className="create-form__text"
+          className="update-form__text"
           onChange={changePlaceData}
         ></input>
-        <p className="create-form__title">Coordenadas del lugar </p>
-        <p className="create-form__title">Longitud: </p>
+        <p className="update-form__title">Coordenadas del lugar </p>
+        <p className="update-form__title">Longitud: </p>
         <label htmlFor="longitude"></label>
         <input
           type="number"
-          className="create-form__text"
+          className="update-form__text"
           id="longitude"
           value={placeData.longitude}
           onChange={changePlaceData}
         />
-        <p className="create-form__title">Latitud: </p>
+        <p className="update-form__title">Latitud: </p>
         <label htmlFor="latitude"></label>
         <input
           type="number"
-          className="create-form__text"
+          className="update-form__text"
           id="latitude"
           value={placeData.latitude}
           onChange={changePlaceData}
@@ -137,11 +138,11 @@ const UpdateFormPage = () => {
           value={placeData.file}
           onChange={changePlaceData}
         /> */}
-        <p className="create-form__text-title">
+        <p className="update-form__text-title">
           Escribe el contenido del artículo aquí:{" "}
         </p>
         <textarea
-          className="create-form__text-area"
+          className="update-form__text-area"
           name="message"
           rows="10"
           cols="30"
@@ -151,7 +152,7 @@ const UpdateFormPage = () => {
         ></textarea>
         <button
           type="submit"
-          className="login-form__button"
+          className="update-form__button"
           disabled={isDisable}
         >
           Modificar
