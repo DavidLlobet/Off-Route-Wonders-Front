@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Welcome to Off Route Wonders
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://user-images.githubusercontent.com/84075174/151149844-9ae71d46-bfe5-4e2e-b9fd-c79d30ca7be4.png)
 
-## Available Scripts
+Off Route Wonders is a web application that I have developed as the final project of the Fullstack Development bootcamp that I have carried out at ISDI Coders. This web application functions as a shared travel blog where adventurous travelers can post unique and hidden wonder places they find when traveling around the world.
 
-In the project directory, you can run:
+The first version of Off Route Wonders was developed using React with redux for the frontend and mongoDB and express for the backend. I am very proud of what I have achieved by creating this web application and I am looking forward to continuing this project and many others that I hope to work on from now on!
 
-### `npm start`
+➖ Some routes are protected with a token. User must login or register to view them.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+➖ Tested using Jest.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+➖ Previously designed on Figma, a great tool to plan the app's design, his accessibility and features.
 
-### `npm test`
+**Technologies used**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+💫 Frontend: React | Redux | SASS | BEM |
 
-### `npm run build`
+💫 Backend: NodeJS | ExpressJS | MongoDB | Mongoose | Jest | PostMan | JWT |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+💫 Other: Figma
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Link:** https://off-routes-wonders.netlify.app/
