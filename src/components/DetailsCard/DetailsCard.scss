@@ -1,20 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap");
-
 .details-card {
+  align-items: center;
   display: flex;
   flex-direction: column;
+  margin: 0 0 30px 45px;
   width: 272px;
-  margin-left: 45px;
-  align-items: center;
-  margin-bottom: 30px;
 
   &__title {
-    font-family: "Quattrocento Sans", sans-serif;
     font-size: 24px;
   }
 
   &__author {
-    font-family: "Quattrocento Sans", sans-serif;
     font-size: 20px;
   }
 
@@ -23,10 +18,10 @@
   }
 
   &__map {
-    width: 277px;
+    background-image: url("../../images/Captura2.JPG");
     height: 178px;
     margin-bottom: 20px;
-    background-image: url("../../images/Captura2.JPG");
+    width: 277px;
   }
 
   &__text {
@@ -35,14 +30,14 @@
   }
 
   &__separator {
-    width: 277px;
     border: 1px solid #000;
     margin-bottom: 20px;
+    width: 277px;
   }
 
   &__comments {
-    font-size: 20px;
     border: none;
+    font-size: 20px;
   }
 
   &__textarea {
@@ -50,20 +45,19 @@
   }
 
   &__button {
-    margin-bottom: 30px;
-    margin-left: 200px;
-    border-radius: 20px;
-    width: 80px;
-    height: 40px;
-    text-decoration: none;
     background-color: #e5e5e5;
+    border-radius: 20px;
+    height: 40px;
+    margin: 0 0 30px 200px;
+    text-decoration: none;
+    width: 80px;
   }
 
   &__comments-container {
-    width: 277px;
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    width: 277px;
   }
 
   &__comment {
@@ -77,8 +71,7 @@
 
 .leaflet-touch {
   height: 210px;
+  margin: 10px 0 70px;
   width: 277px;
-  margin-top: 10px;
-  margin-bottom: 70px;
   z-index: 0;
 }

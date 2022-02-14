@@ -1,18 +1,16 @@
 .user {
+  align-self: flex-start;
+  display: flex;
   font-size: 25px;
   font-weight: 400;
-  display: flex;
-  align-self: flex-start;
-  margin-top: 20px;
-  margin-left: 30px;
+  margin: 20px 0 20px 30px;
 }
 
 .title {
   font-size: 24px;
-  margin-top: 20px;
-  margin-left: 0;
-  line-height: 26px;
   font-weight: 400;
+  line-height: 26px;
+  margin-top: 20px;
 }
 
 .places-list {

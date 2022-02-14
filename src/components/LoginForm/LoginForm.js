@@ -40,7 +40,7 @@ const LoginForm = () => {
   return (
     <>
       <div className="login-container">
-        <p className="login-title">
+        <p className="login-container__title">
           Logéate para compartir tus experiencias por el mundo
         </p>
         <form
@@ -76,7 +76,7 @@ const LoginForm = () => {
           </button>
         </form>
         <Toaster />
-        <div className="line"></div>
+        <div className="login-container__line"></div>
       </div>
     </>
   );

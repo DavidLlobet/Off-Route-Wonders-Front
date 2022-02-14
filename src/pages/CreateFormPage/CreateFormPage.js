@@ -149,7 +149,7 @@ const CreateFormPage = () => {
         ></textarea>
         <button
           type="submit"
-          className="login-form__button"
+          className="create-form__button"
           disabled={isDisable}
         >
           Crear
