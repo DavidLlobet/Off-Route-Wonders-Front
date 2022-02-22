@@ -31,11 +31,7 @@ const FilterButton = () => {
         >
           Albania
         </button>
-        <button
-          className="dropdown-item"
-          type="button"
-          onClick={() => onClick("61ae49c9bb94b276dd223bb4")}
-        >
+        <button className="dropdown-item" type="button">
           Alemania
         </button>
         <button className="dropdown-item" type="button">

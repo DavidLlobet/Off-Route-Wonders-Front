@@ -42,22 +42,42 @@ const Header = () => {
           >
             Albania
           </a>
-          <a href="Alemania" className="header__country">
+          <a
+            href="Alemania"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Alemania
           </a>
           <a href="Austria" className="header__country">
             Austria
           </a>
-          <a href="Bélgica" className="header__country">
+          <a
+            href="Bélgica"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Bélgica
           </a>
-          <a href="Bielorrusia" className="header__country">
+          <a
+            href="Bielorrusia"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Bielorrusia
           </a>
-          <a href="Bosnia-Herzegovina" className="header__country">
+          <a
+            href="Bosnia-Herzegovina"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Bosnia-Herzegovina
           </a>
-          <a href="Bulgaria" className="header__country">
+          <a
+            href="Bulgaria"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Bulgaria
           </a>
         </div>
@@ -65,19 +85,39 @@ const Header = () => {
       <div className="dropdown">
         <button className="dropbtn header__continent">África</button>
         <div className="dropdown-content">
-          <a href="Angola" className="header__country">
+          <a
+            href="Angola"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Angola
           </a>
-          <a href="Argelia" className="header__country">
+          <a
+            href="Argelia"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Argelia
           </a>
-          <a href="Benín" className="header__country">
+          <a
+            href="Benín"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Benín
           </a>
-          <a href="Botsuana" className="header__country">
+          <a
+            href="Botsuana"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Botsuana
           </a>
-          <a href="Burkina-Faso" className="header__country">
+          <a
+            href="Burkina-Faso"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Burkina-Faso
           </a>
         </div>
@@ -85,23 +125,47 @@ const Header = () => {
       <div className="dropdown">
         <button className="dropbtn header__continent">Américas</button>
         <div className="dropdown-content">
-          <a href="Argentina" className="header__country">
+          <a
+            href="Argentina"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Argentina
           </a>
 
-          <a href="Bahamas" className="header__country">
+          <a
+            href="Bahamas"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Bahamas
           </a>
-          <a href="Barbados" className="header__country">
+          <a
+            href="Barbados"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Barbados
           </a>
-          <a href="Belice" className="header__country">
+          <a
+            href="Belice"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Belice
           </a>
-          <a href="Bolivia" className="header__country">
+          <a
+            href="Bolivia"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Bolivia
           </a>
-          <a href="Brasil" className="header__country">
+          <a
+            href="Brasil"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Brasil
           </a>
         </div>
@@ -109,22 +173,46 @@ const Header = () => {
       <div className="dropdown">
         <button className="dropbtn header__continent">Asia</button>
         <div className="dropdown-content">
-          <a href="Afganistan" className="header__country">
+          <a
+            href="Afganistan"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Afganistán
           </a>
-          <a href="Arabia Saudita" className="header__country">
+          <a
+            href="Arabia Saudita"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Arabia Saudita
           </a>
-          <a href="Armenia" className="header__country">
+          <a
+            href="Armenia"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Armenia
           </a>
-          <a href="Azerbaiyán" className="header__country">
+          <a
+            href="Azerbaiyán"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Azerbaiyán
           </a>
-          <a href="Bangladés" className="header__country">
+          <a
+            href="Bangladés"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Bangladés
           </a>
-          <a href="Baréin" className="header__country">
+          <a
+            href="Baréin"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Baréin
           </a>
           <a
@@ -146,22 +234,46 @@ const Header = () => {
       <div className="dropdown">
         <button className="dropbtn header__continent">Oceania</button>
         <div className="dropdown-content">
-          <a href="Australia" className="header__country">
+          <a
+            href="Australia"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Australia
           </a>
-          <a href="Fiyi" className="header__country">
+          <a
+            href="Fiyi"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Fiyi
           </a>
-          <a href="Islas Marshall" className="header__country">
+          <a
+            href="Islas Marshall"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Islas Marshall
           </a>
-          <a href="Islas Salomón" className="header__country">
+          <a
+            href="Islas Salomón"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Islas Salomón
           </a>
-          <a href="Islas Marshall" className="header__country">
+          <a
+            href="Islas Marshall"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Islas Marshall
           </a>
-          <a href="Kiribati" className="header__country">
+          <a
+            href="Kiribati"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Kiribati
           </a>
         </div>
