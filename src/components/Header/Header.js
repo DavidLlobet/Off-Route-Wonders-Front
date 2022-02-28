@@ -49,7 +49,11 @@ const Header = () => {
           >
             Alemania
           </a>
-          <a href="Austria" className="header__country">
+          <a
+            href="Austria"
+            className="header__country"
+            onClick={(event) => event.preventDefault()}
+          >
             Austria
           </a>
           <a

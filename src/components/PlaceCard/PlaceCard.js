@@ -5,15 +5,13 @@ const PlaceCard = ({ place, onClick }) => {
 
   return (
     <div title="place-item" className="place">
-      <p className="country">
-        {place.title} ({place?.country?.name})
+      <p className="place__country">
+        {place.title} ({place.country.name})
       </p>
       <img
         src={place.images[0]}
         alt={place.title}
         className="place__image"
-        width="272"
-        height="178"
         onClick={() => onClick(place.id)}
       />
       <p className="place__info">

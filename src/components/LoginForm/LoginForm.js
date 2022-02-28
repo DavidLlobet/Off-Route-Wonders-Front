@@ -14,7 +14,7 @@ const LoginForm = () => {
   const { loginUser } = useUser();
   let navigate = useNavigate();
 
-  const onSubmit = async (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
     loginUser(userData);
     setTimeout(() => {
