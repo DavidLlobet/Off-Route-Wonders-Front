@@ -9,10 +9,16 @@
     font-weight: 400;
     margin-top: 10px;
   }
-}
-.country {
-  font-size: 20px;
-  font-weight: 400;
+
+  &__country {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  &__image {
+    height: 178px;
+    width: 272px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -24,9 +30,9 @@
       font-weight: 400;
       margin-top: 10px;
     }
-  }
-  .country {
-    font-size: 24px;
-    font-weight: 400;
+    &__country {
+      font-size: 24px;
+      font-weight: 400;
+    }
   }
 }
